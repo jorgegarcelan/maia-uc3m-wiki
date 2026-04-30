@@ -1,5 +1,9 @@
 # MAIA — Wiki del Máster en Inteligencia Artificial Aplicada (UC3M)
 
+<p align="center">
+  <img src="static/maia-logo.png" alt="Logotipo MAIA — Máster en Inteligencia Artificial Aplicada (UC3M)" width="460" />
+</p>
+
 > **English:** This repository hosts the **student-maintained wiki** and AI tooling for the **MSc in Applied Artificial Intelligence** at **Universidad Carlos III de Madrid (UC3M)**. Developed by **Jorge Garcelán** in his capacity as **student representative** (*delegado*) — a practical resource for classmates and future students, not an official publication of the University.
 
 El **Máster Universitario en Inteligencia Artificial Aplicada (MAIA)** se imparte en la **Escuela de Postgrado en Ingeniería y Ciencias Básicas**, campus **Madrid — Puerta de Toledo**, en modalidad **presencial** (**60 ECTS**, en **español**).
@@ -31,6 +35,7 @@ Este repositorio centraliza documentación útil (plan de estudios, asignaturas,
 
 ```
 MAIA/
+├── static/                 # Logotipos MAIA (PNG)
 ├── wiki/                   # Documentación completa del máster
 │   ├── README.md           # Índice general de la wiki
 │   ├── plan-de-estudios.md

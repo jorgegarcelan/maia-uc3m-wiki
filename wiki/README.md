@@ -3,6 +3,8 @@
 > **Escuela de Postgrado en Ingeniería y Ciencias Básicas**
 > Campus Madrid - Puerta de Toledo | Presencial | 60 ECTS | Español
 
+Para **consultar esta wiki con un agente** (Cursor o Claude), clona el repositorio, configura las skills como indica el [**README del repositorio**](../README.md#usar-la-wiki-con-ia) y pregunta en lenguaje natural.
+
 ---
 
 ## Dirección del Máster
@@ -75,3 +77,5 @@ Para ver **preguntas frecuentes resueltas de ejemplo** (matrícula, primer semic
 ---
 
 *Wiki mantenida por la Delegación de Estudiantes del MAIA — Curso 2025/2026*
+
+¿Quieres mejorar algo? Ver [CONTRIBUTING.md](../CONTRIBUTING.md) en la raíz del repositorio.

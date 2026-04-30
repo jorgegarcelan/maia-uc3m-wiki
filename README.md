@@ -8,9 +8,30 @@
 
 El **Máster Universitario en Inteligencia Artificial Aplicada (MAIA)** se imparte en la **Escuela de Postgrado en Ingeniería y Ciencias Básicas**, campus **Madrid — Puerta de Toledo**, en modalidad **presencial** (**60 ECTS**, en **español**).
 
-Este repositorio centraliza documentación útil (plan de estudios, asignaturas, horarios, prácticas, FAQ, contactos…) y **skills para Cursor** que permiten consultar y planificar sobre esa información mediante IA.
+Este repositorio centraliza documentación útil (plan de estudios, asignaturas, horarios, prácticas, FAQ, contactos…) y **skills** (instrucciones para el agente) para **Cursor** o **Claude**: clonas el repo, conectas las skills y el agente responde leyendo la `wiki/`.
 
 > **Importante:** la UC3M es la fuente de verdad para normativa, calendarios y precios. Si hay discrepancia entre esta wiki y la web oficial o la secretaría, **prevalece siempre la información oficial**.
+
+### Solo quiero leer en GitHub
+
+Sin herramientas de IA: abre el [**índice de la wiki**](wiki/README.md) en GitHub y navega por los `.md`, o pulsa `/` en el repo para **Ir al archivo** (*Go to file*).
+
+---
+
+## Usar la wiki con IA
+
+Flujo recomendado: **tener el repositorio en tu ordenador**, **hacer que Cursor o Claude carguen las skills** del proyecto y **preguntar al agente** en lenguaje natural; el agente leerá `wiki/` y los archivos que indiquen las skills.
+
+1. **Clona el repositorio** (o descárgalo como ZIP y descomprime).
+   ```bash
+   git clone https://github.com/jorgegarcelan/maia-uc3m-wiki.git
+   cd maia-uc3m-wiki
+   ```
+2. **Cursor:** abre esta carpeta como proyecto (**File → Open Folder**). Las skills están en [`.cursor/skills/`](.cursor/skills/). En el chat del agente, invoca una skill con `@` y el nombre de la carpeta (por ejemplo `@maia-wiki`).
+3. **Claude (Claude Code u otras apps que usen `SKILL.md`):** tu cliente suele buscar skills en **`.claude/skills/`** dentro del proyecto o en tu carpeta de usuario. Para no duplicar ficheros, puedes **copiar** las carpetas desde `.cursor/skills/` a `.claude/skills/` en la raíz del clon, o crear **enlaces simbólicos** desde `.claude/skills/` apuntando a cada skill en `.cursor/skills/`. Consulta la documentación de tu versión de Claude por si la ruta exacta difiere.
+4. **Pregunta al agente** (horarios, optativas, plan de créditos, compatibilidad laboral, etc.). Para planes o tablas complejas, suele funcionar mejor mencionar la skill adecuada (por ejemplo `@plan-master` o `@comparador-horarios`).
+
+Si algo no cuadra con la web de la UC3M o la secretaría, **manda siempre sobre la información oficial**.
 
 ---
 
@@ -36,6 +57,7 @@ Este repositorio centraliza documentación útil (plan de estudios, asignaturas,
 ```
 MAIA/
 ├── static/                 # Logotipos MAIA (PNG)
+├── .github/                # Plantillas de issues para contribuciones
 ├── wiki/                   # Documentación completa del máster
 │   ├── README.md           # Índice general de la wiki
 │   ├── plan-de-estudios.md
@@ -55,7 +77,9 @@ MAIA/
 │   ├── doble-master.md
 │   └── contactos.md
 ├── ejemplos/               # Preguntas y respuestas de ejemplo
-└── .cursor/skills/         # Skills de Cursor para consultar la wiki con IA
+├── CONTRIBUTING.md         # Cómo proponer cambios (GitHub o delegación)
+├── LICENSE                 # CC BY-SA 4.0
+└── .cursor/skills/         # Skills del agente (Cursor; importables en Claude)
 ```
 
 ---
@@ -77,9 +101,9 @@ Entra por el [**índice de la wiki**](wiki/README.md).
 
 ---
 
-### [`.cursor/skills/`](.cursor/skills/) — Skills para Cursor
+### [`.cursor/skills/`](.cursor/skills/) — Skills del agente
 
-Skills de agente que leen la wiki y responden preguntas o generan planes personalizados. Activables en Cursor mediante `@nombre-del-skill`.
+Definen **qué debe hacer el agente** y **qué archivos leer** en `wiki/`. En **Cursor**, úsalas con `@nombre-de-la-carpeta`. En **Claude**, impórtalas según el paso 3 de [Usar la wiki con IA](#usar-la-wiki-con-ia).
 
 | Skill | Qué hace |
 |-------|----------|
@@ -105,11 +129,11 @@ Respuestas de muestra para que veas qué tipo de ayuda puedes obtener con la wik
 
 ---
 
-## Cómo usar este repositorio
+## Cómo usar este repositorio (resumen)
 
-1. **Solo leer la wiki:** navega por [`wiki/README.md`](wiki/README.md) o abre directamente el archivo que necesites.
-2. **Con Cursor + skills:** abre el repo en Cursor y usa `@maia-wiki`, `@plan-master` u otro skill para hacer preguntas o generar planes sobre tu situación concreta.
-3. **Contribuir:** si detectas un error o quieres añadir información, abre un *issue* o un *pull request*. Cualquier mejora (corrección de fechas, enlaces rotos, nuevas FAQ) es bienvenida.
+1. **Con IA:** sigue [Usar la wiki con IA](#usar-la-wiki-con-ia) (clonar → skills en Cursor o Claude → preguntar al agente).
+2. **Solo lectura en GitHub:** [índice de la wiki](wiki/README.md) o archivos sueltos.
+3. **Contribuir:** [*issue*](https://github.com/jorgegarcelan/maia-uc3m-wiki/issues/new/choose) o *pull request*; detalles en [**CONTRIBUTING.md**](CONTRIBUTING.md).
 
 ---
 
@@ -124,11 +148,13 @@ Respuestas de muestra para que veas qué tipo de ayuda puedes obtener con la wik
 
 ---
 
-## Créditos y mantenimiento
+## Créditos, licencia y mantenimiento
 
-Wiki e impulsada por **Jorge Garcelán** como **delegado de estudiantes** del MAIA (UC3M). El objetivo es que la información esté **centralizada**, **buscable** y **reutilizable** — incluso con asistentes de código.
+Wiki impulsada por **Jorge Garcelán** como **delegado de estudiantes** del MAIA (UC3M). El objetivo es que la información esté **centralizada**, **buscable** y **reutilizable** — incluso con asistentes de código.
 
 Las fichas y datos académicos se basan en fuentes públicas de la UC3M y en el trabajo de la delegación.
+
+El contenido del repositorio se publica bajo **CC BY-SA 4.0** ([`LICENSE`](LICENSE)): puedes compartir y adaptar citando la fuente y manteniendo la misma licencia en derivados.
 
 ---
 

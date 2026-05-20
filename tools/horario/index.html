@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Configurador de Horario — MAIA UC3M</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel-2: #1f232c;
+    --border: #2a2f3a;
+    --text: #e6e8ee;
+    --muted: #9aa3b2;
+    --accent: #4f8cff;
+    --accent-2: #2d6cff;
+    --ok: #2ecc71;
+    --warn: #f5b041;
+    --err: #e74c3c;
+    --inf: #b07cf0;
+    --obl: #f5b041;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.4;
+  }
+  header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--panel);
+  }
+  h1 { margin: 0; font-size: 18px; font-weight: 600; }
+  h1 small { color: var(--muted); font-weight: 400; margin-left: 8px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .seg { display: inline-flex; background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .seg button {
+    background: transparent; color: var(--muted); border: 0; padding: 6px 12px;
+    font-size: 13px; cursor: pointer;
+  }
+  .seg button.active { background: var(--accent-2); color: white; }
+  .btn {
+    background: var(--accent-2); color: white; border: 0; border-radius: 8px;
+    padding: 8px 14px; font-size: 13px; cursor: pointer; font-weight: 500;
+  }
+  .btn.secondary { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); }
+  .btn:hover { filter: brightness(1.1); }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 18px;
+    padding: 18px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  @media (max-width: 980px) {
+    main { grid-template-columns: 1fr; }
+  }
+  .grid {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    overflow-x: auto;
+  }
+  table.horario {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    min-width: 720px;
+  }
+  table.horario th, table.horario td {
+    padding: 0; vertical-align: top;
+  }
+  table.horario th {
+    color: var(--muted); font-weight: 500; font-size: 12px;
+    text-align: center; padding: 6px 4px;
+  }
+  table.horario td.hora {
+    color: var(--muted); font-size: 11px; font-weight: 500;
+    width: 70px; padding: 8px 4px; text-align: right; white-space: nowrap;
+  }
+  .cell {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 10px;
+    min-height: 70px;
+    cursor: pointer;
+    transition: all 0.12s;
+    position: relative;
+    user-select: none;
+  }
+  .cell:hover { border-color: var(--accent); }
+  .cell.empty { background: transparent; border-style: dashed; cursor: default; }
+  .cell.empty:hover { border-color: var(--border); }
+  .cell.selected {
+    background: rgba(46, 204, 113, 0.12);
+    border-color: var(--ok);
+  }
+  .cell .nombre { font-size: 13px; font-weight: 500; line-height: 1.25; }
+  .cell .meta {
+    font-size: 10px; color: var(--muted);
+    margin-top: 4px; display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-block; padding: 1px 6px; border-radius: 4px;
+    font-size: 10px; font-weight: 500;
+  }
+  .tag.inf { background: rgba(176, 124, 240, 0.18); color: var(--inf); }
+  .tag.obl { background: rgba(245, 176, 65, 0.18); color: var(--obl); }
+  .tag.mod { background: rgba(79, 140, 255, 0.16); color: var(--accent); }
+  .cell.selected .check {
+    position: absolute; top: 6px; right: 8px; color: var(--ok); font-size: 14px;
+  }
+  /* view mode: hide empty cells visually */
+  body.mode-view .cell.empty { visibility: hidden; }
+  body.mode-view .cell:not(.selected) { opacity: 0.18; pointer-events: none; }
+
+  aside {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    height: fit-content;
+    position: sticky;
+    top: 18px;
+  }
+  aside h2 { margin: 0 0 10px; font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .kpi:last-child { border-bottom: 0; }
+  .kpi b { font-weight: 600; }
+  .kpi.warn b { color: var(--warn); }
+  .kpi.err b { color: var(--err); }
+  .kpi.ok b { color: var(--ok); }
+  .progress {
+    height: 6px; background: var(--panel-2); border-radius: 4px; overflow: hidden; margin-top: 4px;
+  }
+  .progress > span { display: block; height: 100%; background: var(--accent); transition: width 0.2s; }
+  .progress > span.over { background: var(--err); }
+  .notes { font-size: 11px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+  .verdict {
+    padding: 10px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;
+    margin-bottom: 14px; line-height: 1.4;
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--muted);
+  }
+  .verdict.ok { background: rgba(46,204,113,0.12); border-color: var(--ok); color: var(--ok); }
+  .verdict.err { background: rgba(231,76,60,0.10); border-color: var(--err); color: #ff8a7a; }
+  .verdict ul { margin: 6px 0 0 16px; padding: 0; font-size: 12px; font-weight: 400; }
+  .dia-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 12px;
+  }
+  .dia-row:last-child { border-bottom: 0; }
+  .dia-row .lbl { color: var(--muted); width: 80px; }
+  .dia-row .val { font-weight: 500; }
+  .dia-row.libre .val { color: var(--ok); }
+  .dia-row .ses { color: var(--muted); font-size: 11px; }
+  select.btn { padding: 7px 10px; font-size: 12px; }
+  /* Año view: tablas apiladas */
+  .ano-block { margin-bottom: 24px; }
+  .ano-block h3 {
+    margin: 0 0 8px; font-size: 13px; color: var(--muted);
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .actions { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+  footer { padding: 14px 24px; color: var(--muted); font-size: 12px; text-align: center; border-top: 1px solid var(--border); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body class="mode-select">
+
+<header>
+  <h1>Configurador de Horario <small>MAIA UC3M · 2025/2026</small></h1>
+  <div class="controls">
+    <div class="seg" id="semiSeg">
+      <button data-semi="S1" class="active">S1</button>
+      <button data-semi="S2">S2</button>
+      <button data-semi="S3">S3</button>
+      <button data-semi="S4">S4</button>
+      <button data-semi="ANO">Año</button>
+    </div>
+    <div class="seg" id="modeSeg">
+      <button data-mode="select" class="active">Selección</button>
+      <button data-mode="view">Mi horario</button>
+    </div>
+    <select id="presetSel" class="btn secondary" title="Cargar plantilla">
+      <option value="">Plantillas…</option>
+      <option value="tecnico">Plan técnico (M1 fuerte)</option>
+      <option value="aplicado">Plan aplicado (M2 fuerte)</option>
+      <option value="equilibrado">Plan equilibrado</option>
+      <option value="minimo">Mínimo viable</option>
+    </select>
+    <button class="btn secondary" id="btnReset">Resetear</button>
+  </div>
+</header>
+
+<main>
+  <section class="grid" id="gridContainer"></section>
+
+  <aside>
+    <div id="verdict" class="verdict">—</div>
+
+    <h2>Resumen</h2>
+    <div class="kpi" id="kpiTotal"><span>ECTS totales</span><b>0 / 60</b></div>
+    <div class="progress"><span id="barTotal" style="width:0%"></span></div>
+    <div class="kpi" id="kpiM1"><span>Módulo 1 (15–24)</span><b>0</b></div>
+    <div class="kpi" id="kpiM2"><span>Módulo 2 (18–30)</span><b>0</b></div>
+    <div class="kpi" id="kpiObl"><span>Obligatoria (Ética)</span><b>—</b></div>
+    <div class="kpi" id="kpiCount"><span>Asignaturas</span><b>0</b></div>
+
+    <h2 style="margin-top:16px">Carga semanal</h2>
+    <div id="dias"></div>
+
+    <div class="actions">
+      <button class="btn" id="btnIcs">Exportar a calendario (.ics)</button>
+      <button class="btn secondary" id="btnMd">Copiar como Markdown</button>
+    </div>
+
+    <div class="notes">
+      <p><b>Cómo funciona:</b> haz click en cada asignatura que quieras cursar. La selección se guarda en este navegador.</p>
+      <p><b>(INF)</b> = sesión en aula de informática. El plan requiere <b>3 ECTS</b> de la obligatoria (Ética), 15–24 ECTS del Módulo 1 y 18–30 del Módulo 2. Prácticas (6) y TFM (6) se suman aparte.</p>
+      <p>Fechas y aulas pueden variar — consulta el <a href="https://aplicaciones.uc3m.es/horarios-web/publicacion/master.page?plan=475&centro=4" target="_blank">horario oficial</a>.</p>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  Hecho con ❤️ para MAIA · Datos extraídos de <a href="../../wiki/horarios.md">wiki/horarios.md</a> y <a href="../../wiki/asignaturas.md">wiki/asignaturas.md</a>
+</footer>
+
+<script>
+/* ========== Datos ========== */
+const SEMIS = {
+  S1: { label: "Semicuatrimestre 1", start: "20250908", end: "20251024" },
+  S2: { label: "Semicuatrimestre 2", start: "20251103", end: "20260119" },
+  S3: { label: "Semicuatrimestre 3", start: "20260126", end: "20260313" },
+  S4: { label: "Semicuatrimestre 4", start: "20260323", end: "20260513" },
+};
+const FRANJAS = [
+  { id: "F1", inicio: "16:00", fin: "17:30" },
+  { id: "F2", inicio: "17:45", fin: "19:15" },
+  { id: "F3", inicio: "19:30", fin: "21:00" },
+];
+const DIAS = [
+  { id: "MO", label: "Lunes" },
+  { id: "TU", label: "Martes" },
+  { id: "WE", label: "Miércoles" },
+  { id: "TH", label: "Jueves" },
+  { id: "FR", label: "Viernes" },
+];
+// Catálogo: código → {nombre, modulo, tipo}
+const CAT = {
+  "19197": { nombre: "Implicaciones Éticas y Legales",   modulo: "M3", tipo: "O" },
+  "19198": { nombre: "Representación del Conocimiento",  modulo: "M1", tipo: "OP" },
+  "19199": { nombre: "Aprend. Series Temporales",        modulo: "M1", tipo: "OP" },
+  "19200": { nombre: "Búsqueda y Optimización",          modulo: "M1", tipo: "OP" },
+  "19201": { nombre: "Métodos Probabilísticos",          modulo: "M1", tipo: "OP" },
+  "19202": { nombre: "Computación Evolutiva",            modulo: "M1", tipo: "OP" },
+  "19203": { nombre: "Redes de Neuronas",                modulo: "M1", tipo: "OP" },
+  "19204": { nombre: "Aprendizaje Automático",           modulo: "M1", tipo: "OP" },
+  "19205": { nombre: "Agentes y Sistemas Multiagente",   modulo: "M1", tipo: "OP" },
+  "19206": { nombre: "Aprendizaje Profundo",             modulo: "M1", tipo: "OP" },
+  "19207": { nombre: "Planificación Automática",         modulo: "M1", tipo: "OP" },
+  "19208": { nombre: "Razonamiento con Incertidumbre",   modulo: "M1", tipo: "OP" },
+  "19209": { nombre: "Aprendizaje por Refuerzo",         modulo: "M1", tipo: "OP" },
+  "19210": { nombre: "Analítica de Negocio",             modulo: "M2", tipo: "OP" },
+  "19211": { nombre: "PLN",                              modulo: "M2", tipo: "OP" },
+  "19212": { nombre: "Vehículos Autónomos",              modulo: "M2", tipo: "OP" },
+  "19213": { nombre: "Web Semántica y Buscadores",       modulo: "M2", tipo: "OP" },
+  "19214": { nombre: "IA en Educación",                  modulo: "M2", tipo: "OP" },
+  "19215": { nombre: "IA en Finanzas",                   modulo: "M2", tipo: "OP" },
+  "19216": { nombre: "IA en Salud",                      modulo: "M2", tipo: "OP" },
+  "19217": { nombre: "Visión Artificial",                modulo: "M2", tipo: "OP" },
+  "19218": { nombre: "IA y Desarrollo Sostenible",       modulo: "M2", tipo: "OP" },
+  "19219": { nombre: "Robótica Inteligente",             modulo: "M2", tipo: "OP" },
+  "19222": { nombre: "Fábricas Inteligentes",            modulo: "M2", tipo: "OP" },
+  "19223": { nombre: "Ciudades Inteligentes",            modulo: "M2", tipo: "OP" },
+  "19224": { nombre: "Inteligencia Ambiental",           modulo: "M2", tipo: "OP" },
+  "19225": { nombre: "Emprendimiento en IA",             modulo: "M3", tipo: "OP" },
+};
+// Sesiones: cada entrada {semi, dia, franja, codigo, inf}
+const SESIONES = [
+  // S1
+  { semi:"S1", dia:"MO", franja:"F1", codigo:"19204", inf:false },
+  { semi:"S1", dia:"TU", franja:"F1", codigo:"19203", inf:false },
+  { semi:"S1", dia:"WE", franja:"F1", codigo:"19204", inf:true  },
+  { semi:"S1", dia:"TH", franja:"F1", codigo:"19202", inf:false },
+  { semi:"S1", dia:"FR", franja:"F1", codigo:"19200", inf:true  },
+  { semi:"S1", dia:"MO", franja:"F2", codigo:"19205", inf:false },
+  { semi:"S1", dia:"TU", franja:"F2", codigo:"19199", inf:false },
+  { semi:"S1", dia:"WE", franja:"F2", codigo:"19205", inf:true  },
+  { semi:"S1", dia:"TH", franja:"F2", codigo:"19199", inf:false },
+  { semi:"S1", dia:"FR", franja:"F2", codigo:"19203", inf:false },
+  { semi:"S1", dia:"MO", franja:"F3", codigo:"19201", inf:false },
+  { semi:"S1", dia:"TU", franja:"F3", codigo:"19197", inf:false },
+  { semi:"S1", dia:"WE", franja:"F3", codigo:"19201", inf:false },
+  { semi:"S1", dia:"TH", franja:"F3", codigo:"19197", inf:false },
+  // S2
+  { semi:"S2", dia:"MO", franja:"F1", codigo:"19224", inf:false },
+  { semi:"S2", dia:"TU", franja:"F1", codigo:"19212", inf:false },
+  { semi:"S2", dia:"WE", franja:"F1", codigo:"19206", inf:false },
+  { semi:"S2", dia:"TH", franja:"F1", codigo:"19224", inf:false },
+  { semi:"S2", dia:"FR", franja:"F1", codigo:"19211", inf:false },
+  { semi:"S2", dia:"MO", franja:"F2", codigo:"19208", inf:false },
+  { semi:"S2", dia:"TU", franja:"F2", codigo:"19211", inf:false },
+  { semi:"S2", dia:"WE", franja:"F2", codigo:"19208", inf:false },
+  { semi:"S2", dia:"TH", franja:"F2", codigo:"19206", inf:false },
+  { semi:"S2", dia:"FR", franja:"F2", codigo:"19212", inf:false },
+  { semi:"S2", dia:"MO", franja:"F3", codigo:"19209", inf:false },
+  { semi:"S2", dia:"TU", franja:"F3", codigo:"19207", inf:false },
+  { semi:"S2", dia:"WE", franja:"F3", codigo:"19207", inf:false },
+  { semi:"S2", dia:"TH", franja:"F3", codigo:"19207", inf:false },
+  { semi:"S2", dia:"FR", franja:"F3", codigo:"19209", inf:false },
+  // S3
+  { semi:"S3", dia:"MO", franja:"F1", codigo:"19219", inf:false },
+  { semi:"S3", dia:"TU", franja:"F1", codigo:"19217", inf:false },
+  { semi:"S3", dia:"WE", franja:"F1", codigo:"19219", inf:true  },
+  { semi:"S3", dia:"TH", franja:"F1", codigo:"19213", inf:false },
+  { semi:"S3", dia:"FR", franja:"F1", codigo:"19217", inf:true  },
+  { semi:"S3", dia:"MO", franja:"F2", codigo:"19215", inf:false },
+  { semi:"S3", dia:"TU", franja:"F2", codigo:"19214", inf:false },
+  { semi:"S3", dia:"WE", franja:"F2", codigo:"19215", inf:false },
+  { semi:"S3", dia:"TH", franja:"F2", codigo:"19214", inf:true  },
+  { semi:"S3", dia:"FR", franja:"F2", codigo:"19213", inf:true  },
+  { semi:"S3", dia:"MO", franja:"F3", codigo:"19216", inf:false },
+  { semi:"S3", dia:"TU", franja:"F3", codigo:"19218", inf:false },
+  { semi:"S3", dia:"WE", franja:"F3", codigo:"19216", inf:false },
+  { semi:"S3", dia:"TH", franja:"F3", codigo:"19218", inf:true  },
+  // S4
+  { semi:"S4", dia:"TH", franja:"F1", codigo:"19223", inf:false },
+  { semi:"S4", dia:"MO", franja:"F2", codigo:"19222", inf:false },
+  { semi:"S4", dia:"TU", franja:"F2", codigo:"19223", inf:false },
+  { semi:"S4", dia:"WE", franja:"F2", codigo:"19222", inf:false },
+  { semi:"S4", dia:"TH", franja:"F2", codigo:"19223", inf:false },
+  { semi:"S4", dia:"MO", franja:"F3", codigo:"19210", inf:false },
+  { semi:"S4", dia:"TU", franja:"F3", codigo:"19225", inf:false },
+  { semi:"S4", dia:"WE", franja:"F3", codigo:"19225", inf:false },
+  { semi:"S4", dia:"TH", franja:"F3", codigo:"19210", inf:false },
+];
+
+/* ========== Plantillas ========== */
+// Cada preset suma 48 ECTS docencia: 3 obl (Ética) + 15-24 M1 + 18-30 M2
+const PRESETS = {
+  tecnico: {
+    nombre: "Plan técnico",
+    codigos: ["19197", "19204","19203","19202","19200","19199","19205","19201","19206", "19211","19224","19217","19219","19213","19216","19210"],
+  },
+  aplicado: {
+    nombre: "Plan aplicado",
+    codigos: ["19197", "19204","19203","19206","19208","19209", "19211","19212","19224","19213","19214","19215","19216","19217","19222","19223"],
+  },
+  equilibrado: {
+    nombre: "Plan equilibrado",
+    codigos: ["19197", "19204","19203","19200","19206","19207","19208","19209", "19211","19224","19217","19219","19215","19216","19223","19222"],
+  },
+  minimo: {
+    nombre: "Mínimo viable (15 M1 + 18 M2)",
+    codigos: ["19197", "19204","19203","19200","19206","19209", "19211","19224","19217","19219","19215","19216"],
+  },
+};
+
+/* ========== Estado ========== */
+const LS_KEY = "maia.horario.v1";
+let state = {
+  semi: "S1",
+  mode: "select",
+  selected: {},   // codigo → true
+};
+function load() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) state = { ...state, ...JSON.parse(raw) };
+  } catch (e) {}
+}
+function save() { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+
+/* ========== Render ========== */
+const gridContainer = document.getElementById("gridContainer");
+
+function tablaHTML(semi) {
+  let html = "<thead><tr><th></th>";
+  DIAS.forEach(d => html += `<th>${d.label}</th>`);
+  html += "</tr></thead><tbody>";
+  FRANJAS.forEach(f => {
+    html += `<tr><td class="hora">${f.inicio}<br>${f.fin}</td>`;
+    DIAS.forEach(d => {
+      const ses = SESIONES.find(s =>
+        s.semi === semi && s.dia === d.id && s.franja === f.id);
+      if (!ses) {
+        html += `<td><div class="cell empty"></div></td>`;
+      } else {
+        const meta = CAT[ses.codigo];
+        const sel = !!state.selected[ses.codigo];
+        const tags = [];
+        if (ses.inf) tags.push(`<span class="tag inf">INF</span>`);
+        if (meta.tipo === "O") tags.push(`<span class="tag obl">OBL</span>`);
+        tags.push(`<span class="tag mod">${meta.modulo}</span>`);
+        html += `<td><div class="cell ${sel ? "selected" : ""}" data-codigo="${ses.codigo}">
+          <div class="nombre">${meta.nombre}</div>
+          <div class="meta">${tags.join("")}<span>${ses.codigo}</span></div>
+          ${sel ? '<span class="check">✓</span>' : ""}
+        </div></td>`;
+      }
+    });
+    html += "</tr>";
+  });
+  html += "</tbody>";
+  return html;
+}
+
+function render() {
+  document.body.className = "mode-" + state.mode;
+  document.querySelectorAll("#semiSeg button").forEach(b =>
+    b.classList.toggle("active", b.dataset.semi === state.semi));
+  document.querySelectorAll("#modeSeg button").forEach(b =>
+    b.classList.toggle("active", b.dataset.mode === state.mode));
+
+  if (state.semi === "ANO") {
+    let html = "";
+    ["S1","S2","S3","S4"].forEach(s => {
+      html += `<div class="ano-block">
+        <h3>${SEMIS[s].label}</h3>
+        <table class="horario">${tablaHTML(s)}</table>
+      </div>`;
+    });
+    gridContainer.innerHTML = html;
+  } else {
+    gridContainer.innerHTML = `<table class="horario">${tablaHTML(state.semi)}</table>`;
+  }
+
+  renderResumen();
+  renderDias();
+  renderVerdict();
+}
+
+function renderDias() {
+  const cont = document.getElementById("dias");
+  const semis = state.semi === "ANO" ? ["S1","S2","S3","S4"] : [state.semi];
+  let html = "";
+  semis.forEach(semi => {
+    if (state.semi === "ANO") html += `<div class="dia-row" style="border-bottom:0;padding-top:10px"><span class="lbl" style="color:var(--accent);font-weight:600">${semi}</span><span></span></div>`;
+    DIAS.forEach(d => {
+      const sesDia = SESIONES.filter(s =>
+        s.semi === semi && s.dia === d.id && state.selected[s.codigo]);
+      if (sesDia.length === 0) {
+        html += `<div class="dia-row libre"><span class="lbl">${d.label}</span><span class="val">Libre</span></div>`;
+      } else {
+        const franjasOcup = [...new Set(sesDia.map(s => s.franja))].sort();
+        const primera = FRANJAS.find(f => f.id === franjasOcup[0]);
+        const ultima = FRANJAS.find(f => f.id === franjasOcup[franjasOcup.length-1]);
+        html += `<div class="dia-row"><span class="lbl">${d.label}</span>
+          <span><span class="val">${primera.inicio}–${ultima.fin}</span>
+          <span class="ses"> · ${sesDia.length}h${sesDia.length>1?"s":""}</span></span></div>`;
+      }
+    });
+  });
+  cont.innerHTML = html;
+}
+
+function renderVerdict() {
+  const codes = Object.keys(state.selected).filter(c => state.selected[c]);
+  let m1 = 0, m2 = 0, m3 = 0, obl = false;
+  codes.forEach(c => {
+    const m = CAT[c]; if (!m) return;
+    if (m.modulo === "M1") m1 += 3;
+    else if (m.modulo === "M2") m2 += 3;
+    else m3 += 3;
+    if (c === "19197") obl = true;
+  });
+  const total = m1 + m2 + m3;
+  const errors = [];
+  if (codes.length === 0) {
+    document.getElementById("verdict").className = "verdict";
+    document.getElementById("verdict").innerHTML = "Selecciona asignaturas para empezar.";
+    return;
+  }
+  if (!obl) errors.push("Falta la obligatoria <b>Implicaciones Éticas</b> (3 ECTS)");
+  if (m1 < 15) errors.push(`Faltan <b>${15-m1} ECTS</b> en Módulo 1 (mín. 15)`);
+  if (m1 > 24) errors.push(`Excede <b>${m1-24} ECTS</b> en Módulo 1 (máx. 24)`);
+  if (m2 < 18) errors.push(`Faltan <b>${18-m2} ECTS</b> en Módulo 2 (mín. 18)`);
+  if (m2 > 30) errors.push(`Excede <b>${m2-30} ECTS</b> en Módulo 2 (máx. 30)`);
+  if (total !== 48) errors.push(`Total docencia <b>${total} ECTS</b> (debe ser 48; con Prácticas+TFM = 60)`);
+
+  const el = document.getElementById("verdict");
+  if (errors.length === 0) {
+    el.className = "verdict ok";
+    el.innerHTML = `✓ Plan válido — ${total} ECTS docencia + 12 (Prácticas+TFM) = <b>60 ECTS</b>`;
+  } else {
+    el.className = "verdict err";
+    el.innerHTML = `✗ Plan incompleto<ul>${errors.map(e => `<li>${e}</li>`).join("")}</ul>`;
+  }
+}
+
+function renderResumen() {
+  const codes = Object.keys(state.selected).filter(c => state.selected[c]);
+  let m1 = 0, m2 = 0, m3 = 0, obl = false;
+  codes.forEach(c => {
+    const m = CAT[c]; if (!m) return;
+    if (m.modulo === "M1") m1 += 3;
+    else if (m.modulo === "M2") m2 += 3;
+    else m3 += 3;
+    if (c === "19197") obl = true;
+  });
+  const total = m1 + m2 + m3;
+  const setKpi = (id, val, cls) => {
+    const el = document.getElementById(id);
+    el.querySelector("b").textContent = val;
+    el.classList.remove("ok","warn","err");
+    if (cls) el.classList.add(cls);
+  };
+  setKpi("kpiTotal", `${total} / 48`); // 48 = 3 obl + 45 optativas (sin prácticas/TFM)
+  setKpi("kpiM1", `${m1}`, m1 < 15 ? "warn" : m1 > 24 ? "err" : "ok");
+  setKpi("kpiM2", `${m2}`, m2 < 18 ? "warn" : m2 > 30 ? "err" : "ok");
+  setKpi("kpiObl", obl ? "✓ Sí" : "✗ No", obl ? "ok" : "warn");
+  setKpi("kpiCount", `${codes.length}`);
+  const bar = document.getElementById("barTotal");
+  const pct = Math.min(100, (total / 48) * 100);
+  bar.style.width = pct + "%";
+  bar.classList.toggle("over", total > 48);
+}
+
+/* ========== Eventos ========== */
+document.getElementById("semiSeg").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state.semi = b.dataset.semi; save(); render();
+});
+document.getElementById("modeSeg").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state.mode = b.dataset.mode; save(); render();
+});
+document.addEventListener("click", e => {
+  const cell = e.target.closest(".cell"); if (!cell || cell.classList.contains("empty")) return;
+  if (state.mode !== "select") return;
+  const c = cell.dataset.codigo; if (!c) return;
+  state.selected[c] = !state.selected[c];
+  if (!state.selected[c]) delete state.selected[c];
+  save(); render();
+});
+document.getElementById("presetSel").addEventListener("change", e => {
+  const k = e.target.value; if (!k) return;
+  const p = PRESETS[k];
+  if (!confirm(`Cargar "${p.nombre}" — sustituirá tu selección actual.`)) {
+    e.target.value = ""; return;
+  }
+  state.selected = {};
+  p.codigos.forEach(c => state.selected[c] = true);
+  save(); render();
+  e.target.value = "";
+});
+document.getElementById("btnReset").addEventListener("click", () => {
+  if (!confirm("¿Borrar toda la selección?")) return;
+  state.selected = {}; save(); render();
+});
+
+/* ========== Exportar ICS ========== */
+function pad(n) { return String(n).padStart(2, "0"); }
+function toICSDateTime(yyyymmdd, hhmm) {
+  return `${yyyymmdd}T${hhmm.replace(":","")}00`;
+}
+// devuelve la primera fecha (yyyymmdd) ≥ start cuyo día semana coincida con dayCode (MO..FR)
+function firstOccurrence(startYmd, dayCode) {
+  const idx = ["MO","TU","WE","TH","FR","SA","SU"].indexOf(dayCode);
+  // JS Date getDay(): 0=domingo..6=sábado → mapear
+  const jsTarget = idx === 6 ? 0 : idx + 1; // MO=1..SU=0
+  const y = +startYmd.slice(0,4), m = +startYmd.slice(4,6)-1, d = +startYmd.slice(6,8);
+  const dt = new Date(Date.UTC(y, m, d));
+  while (dt.getUTCDay() !== jsTarget) dt.setUTCDate(dt.getUTCDate()+1);
+  return `${dt.getUTCFullYear()}${pad(dt.getUTCMonth()+1)}${pad(dt.getUTCDate())}`;
+}
+function buildICS() {
+  const selected = Object.keys(state.selected).filter(c => state.selected[c]);
+  if (!selected.length) { alert("Selecciona al menos una asignatura."); return null; }
+  const lines = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//MAIA UC3M//Configurador de Horario//ES",
+    "CALSCALE:GREGORIAN",
+    "X-WR-CALNAME:MAIA UC3M",
+    "X-WR-TIMEZONE:Europe/Madrid",
+  ];
+  const now = new Date();
+  const dtstamp = `${now.getUTCFullYear()}${pad(now.getUTCMonth()+1)}${pad(now.getUTCDate())}T${pad(now.getUTCHours())}${pad(now.getUTCMinutes())}${pad(now.getUTCSeconds())}Z`;
+  let uidCount = 0;
+  SESIONES.forEach(ses => {
+    if (!selected.includes(ses.codigo)) return;
+    const semi = SEMIS[ses.semi];
+    const franja = FRANJAS.find(f => f.id === ses.franja);
+    const meta = CAT[ses.codigo];
+    const firstDate = firstOccurrence(semi.start, ses.dia);
+    const dtstart = toICSDateTime(firstDate, franja.inicio);
+    const dtend = toICSDateTime(firstDate, franja.fin);
+    const until = `${semi.end}T235900Z`;
+    const summary = `${meta.nombre}${ses.inf ? " (INF)" : ""}`;
+    lines.push(
+      "BEGIN:VEVENT",
+      `UID:maia-${ses.codigo}-${ses.semi}-${ses.dia}-${ses.franja}-${++uidCount}@maia-uc3m`,
+      `DTSTAMP:${dtstamp}`,
+      `DTSTART;TZID=Europe/Madrid:${dtstart}`,
+      `DTEND;TZID=Europe/Madrid:${dtend}`,
+      `RRULE:FREQ=WEEKLY;BYDAY=${ses.dia};UNTIL=${until}`,
+      `SUMMARY:${summary}`,
+      `DESCRIPTION:Código ${ses.codigo} · Módulo ${meta.modulo}${ses.inf ? " · Aula informática" : ""}`,
+      `LOCATION:Campus Puerta de Toledo · UC3M`,
+      "END:VEVENT"
+    );
+  });
+  lines.push("END:VCALENDAR");
+  return lines.join("\r\n");
+}
+document.getElementById("btnIcs").addEventListener("click", () => {
+  const ics = buildICS(); if (!ics) return;
+  const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "maia-horario.ics";
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+});
+document.getElementById("btnMd").addEventListener("click", () => {
+  const selected = Object.keys(state.selected).filter(c => state.selected[c]);
+  if (!selected.length) { alert("Selecciona al menos una asignatura."); return; }
+  let md = "# Mi horario MAIA\n\n";
+  ["S1","S2","S3","S4"].forEach(semi => {
+    const items = SESIONES.filter(s => s.semi === semi && selected.includes(s.codigo));
+    if (!items.length) return;
+    md += `## ${SEMIS[semi].label}\n\n| Hora | Lunes | Martes | Miércoles | Jueves | Viernes |\n|---|---|---|---|---|---|\n`;
+    FRANJAS.forEach(f => {
+      const row = [`${f.inicio}–${f.fin}`];
+      DIAS.forEach(d => {
+        const s = items.find(x => x.dia === d.id && x.franja === f.id);
+        row.push(s ? `${CAT[s.codigo].nombre}${s.inf ? " (INF)" : ""}` : "—");
+      });
+      md += "| " + row.join(" | ") + " |\n";
+    });
+    md += "\n";
+  });
+  navigator.clipboard.writeText(md).then(() => {
+    alert("Markdown copiado al portapapeles.");
+  });
+});
+
+/* ========== Init ========== */
+load();
+render();
+</script>
+</body>
+</html>

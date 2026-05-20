@@ -28,7 +28,7 @@ Flujo recomendado: **tener el repositorio en tu ordenador**, **hacer que Cursor 
    cd maia-uc3m-wiki
    ```
 2. **Cursor:** abre esta carpeta como proyecto (**File → Open Folder**). Las skills están en [`.cursor/skills/`](.cursor/skills/). En el chat del agente, invoca una skill con `@` y el nombre de la carpeta (por ejemplo `@maia-wiki`).
-3. **Claude (Claude Code u otras apps que usen `SKILL.md`):** tu cliente suele buscar skills en **`.claude/skills/`** dentro del proyecto o en tu carpeta de usuario. Para no duplicar ficheros, puedes **copiar** las carpetas desde `.cursor/skills/` a `.claude/skills/` en la raíz del clon, o crear **enlaces simbólicos** desde `.claude/skills/` apuntando a cada skill en `.cursor/skills/`. Consulta la documentación de tu versión de Claude por si la ruta exacta difiere.
+3. **Claude (Claude Code u otras apps que usen `SKILL.md`):** las mismas skills están en **`.claude/skills/`** (sincronizadas con `.cursor/skills/` en este repo). Si solo ves una carpeta, copia desde `.cursor/skills/` según la documentación de tu cliente.
 4. **Pregunta al agente** (horarios, optativas, plan de créditos, compatibilidad laboral, etc.). Para planes o tablas complejas, suele funcionar mejor mencionar la skill adecuada (por ejemplo `@plan-master` o `@comparador-horarios`).
 
 Si algo no cuadra con la web de la UC3M o la secretaría, **manda siempre sobre la información oficial**.
@@ -79,7 +79,8 @@ MAIA/
 ├── ejemplos/               # Preguntas y respuestas de ejemplo
 ├── CONTRIBUTING.md         # Cómo proponer cambios (GitHub o delegación)
 ├── LICENSE                 # CC BY-SA 4.0
-└── .cursor/skills/         # Skills del agente (Cursor; importables en Claude)
+├── .cursor/skills/         # Skills del agente (Cursor)
+└── .claude/skills/         # Mismas skills (Claude Code)
 ```
 
 ---
@@ -109,7 +110,8 @@ Definen **qué debe hacer el agente** y **qué archivos leer** en `wiki/`. En **
 |-------|----------|
 | [`maia-wiki`](.cursor/skills/maia-wiki/SKILL.md) | Consulta general sobre cualquier aspecto del máster: asignaturas, horarios, admisión, profesorado, becas… |
 | [`plan-master`](.cursor/skills/plan-master/SKILL.md) | Genera un plan de matrícula personalizado según tus intereses y restricciones |
-| [`comparador-horarios`](.cursor/skills/comparador-horarios/SKILL.md) | Detecta solapamientos entre asignaturas y genera la parrilla semanal visual |
+| [`comparador-horarios`](.cursor/skills/comparador-horarios/SKILL.md) | Detecta solapamientos entre asignaturas y muestra la parrilla semanal (Grupo 1) |
+| [`configurador-horario`](.cursor/skills/configurador-horario/SKILL.md) | Abre el configurador visual (`tools/horario/`) y exporta a `.ics` |
 | [`itinerarios-tipo`](.cursor/skills/itinerarios-tipo/SKILL.md) | Recomienda itinerarios predefinidos por perfil profesional (ML Engineer, NLP, Robótica, etc.) |
 | [`mapa-prerrequisitos`](.cursor/skills/mapa-prerrequisitos/SKILL.md) | Muestra las dependencias y el orden recomendado entre asignaturas |
 | [`tracker-entregas`](.cursor/skills/tracker-entregas/SKILL.md) | Genera un tracker personalizado de entregas y evaluaciones por semicuatrimestre |

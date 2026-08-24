@@ -1,5 +1,9 @@
 # MAIA — Wiki del Máster en Inteligencia Artificial Aplicada (UC3M)
 
+## [Abrir el planificador web →](https://maia-uc3m-wiki.vercel.app/)
+
+Construye tu horario, comprueba restricciones y detecta solapes antes de matricularte.
+
 <p align="center">
   <img src="static/maia-logo.png" alt="Logotipo MAIA — Máster en Inteligencia Artificial Aplicada (UC3M)" width="460" />
 </p>

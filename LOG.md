@@ -17,6 +17,15 @@ Las entradas se añaden en orden cronológico inverso. Si un dato oficial aún n
 
 ## Historial
 
+### 2026-08-24 — Protección de secretos locales
+
+- **Curso:** General
+- **Ámbito:** seguridad del repositorio
+- **Archivos:** `.gitignore`
+- **Cambio:** se excluyeron los archivos `.env` y sus variantes, manteniendo `.env.example` disponible para documentar variables sin valores sensibles.
+- **Fuente:** revisión de seguridad del repositorio
+- **Estado:** verificado
+
 ### 2026-08-24 — Imagen para previews sociales
 
 - **Curso:** General

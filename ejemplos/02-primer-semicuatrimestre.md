@@ -36,4 +36,4 @@ Todas son del **Módulo 1 (Fundamentos y técnicas)**:
 
 En la práctica: **ética + cuatro de esa lista** (de las ocho posibles). El resto de optativas del máster se cursan a partir de **S2**.
 
-*Referencia de periodo en la wiki: curso 2025/2026, aproximadamente septiembre–octubre.*
+*Referencia de periodo: curso 2026/2027, del 7 de septiembre al 23 de octubre de 2026. Las sesiones concretas dependen del día de la semana de cada asignatura.*

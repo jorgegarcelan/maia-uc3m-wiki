@@ -13,13 +13,15 @@ En el **Máster en IA Aplicada (MAIA)** de la UC3M puedes cursar todo el catálo
 - **Prácticas:** 6 ECTS.
 - **TFM:** 6 ECTS.
 
-## Límites por módulo (sobre las 45 ECTS optativas)
+## Límites por módulo
 
 | Módulo | Mínimo | Máximo |
 |--------|--------|--------|
 | **M1** — Fundamentos y técnicas | 15 | 24 |
 | **M2** — Aplicaciones | 18 | 30 |
-| **M3** — Emprendimiento en IA (opcional) | 0 | 3 |
+| **M3** — Ética y emprendimiento | 3 | 6 |
+
+Los 3 ECTS mínimos de M3 son la obligatoria de Ética; Emprendimiento añade otros 3 ECTS optativos.
 
 ## Por semicuatrimestre (cuánde matricular cada bloque)
 
@@ -28,7 +30,7 @@ En el **Máster en IA Aplicada (MAIA)** de la UC3M puedes cursar todo el catálo
 - **S3:** solo **M2**, entre **9 y 15 ECTS**.
 - **S4:** **Prácticas + TFM** + **1–3 optativas** más.
 
-El listado concreto de códigos y nombres por semicuatrimestre está en la wiki (`wiki/plan-de-estudios.md`, `wiki/semicuatrimestres.md`, `wiki/asignaturas.md`).
+El listado concreto de códigos y nombres por semicuatrimestre está en la wiki (`wiki/plan-de-estudios.md`, `wiki/cursos/2026-2027/semicuatrimestres.md`, `wiki/asignaturas.md`).
 
 ## Resumen
 

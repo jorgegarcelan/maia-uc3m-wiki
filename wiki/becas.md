@@ -13,6 +13,8 @@
 - **Requisito:** haber formalizado la solicitud de admisión al máster
 - **Fecha límite de solicitud:** 31 de mayo de 2026
 
+> **Convocatoria cerrada y resuelta.** Esta sección se conserva como referencia del curso 2026/2027; para nuevas solicitudes consulta el portal de ayudas del curso correspondiente.
+
 ### Calendario de Resoluciones
 
 | Resolución | Fecha | Solicitudes cubiertas |
@@ -35,4 +37,4 @@
 
 ---
 
-*Fuente: [Becas - Web del Máster UC3M](https://www.uc3m.es/master/inteligencia-artificial-aplicada#becas)*
+*Fuente: [Becas - Web del Máster UC3M](https://www.uc3m.es/master/inteligencia-artificial-aplicada#becas) y [convocatorias 2026](https://uc3m.es/postgrado/ayudas/principales/2026). Revisión: 24 de agosto de 2026.*

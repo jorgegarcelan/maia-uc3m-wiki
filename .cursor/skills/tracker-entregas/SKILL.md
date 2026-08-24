@@ -9,9 +9,9 @@ Genera una **plantilla Markdown** personalizable. La wiki **no** incluye fechas 
 
 ## Fuentes útiles
 
-- `wiki/semicuatrimestres.md` — ventanas S1–S4 (2025/2026)
-- `wiki/asignaturas.md` + `wiki/asignaturas/*.md` — nombres de asignaturas y coordinadores
-- `wiki/horarios.md` — días de clase (para no confundir sesión con entrega)
+- `wiki/cursos/2026-2027/semicuatrimestres.md` — ventanas S1–S4
+- `wiki/asignaturas.md` + `wiki/cursos/2026-2027/asignaturas/*.md` — nombres de asignaturas y coordinadores
+- `wiki/cursos/2026-2027/horarios.md` — días de clase (para no confundir sesión con entrega)
 - Calendario oficial UC3M (enlace en `wiki/README.md`)
 
 ## Qué hacer
@@ -30,7 +30,7 @@ Genera una **plantilla Markdown** personalizable. La wiki **no** incluye fechas 
 
 ### Por semana (opcional)
 
-Semanas alineadas con el periodo del semi en `wiki/semicuatrimestres.md`.
+Semanas alineadas con el periodo del semi en `wiki/cursos/2026-2027/semicuatrimestres.md`.
 
 4. Incluye fila **Éticas (19197)** si el semi es S1.
 5. Recuerda: actualizar fechas desde **Aula Global** y guías del profesor; la wiki no sustituye eso.
@@ -38,4 +38,4 @@ Semanas alineadas con el periodo del semi en `wiki/semicuatrimestres.md`.
 ## Exportación
 
 - Ofrece guardar como `tracker-<usuario>-S1.md` en la raíz o carpeta personal del usuario (no commitear datos personales al repo sin permiso).
-- Sugiere exportar a calendario solo si el usuario pide integración (.ics) → `@configurador-horario` cubre horario de clases, no entregas.
+- Sugiere exportar a calendario solo si el usuario pide integración (.ics) → `configurador-horario` cubre horario de clases, no entregas.

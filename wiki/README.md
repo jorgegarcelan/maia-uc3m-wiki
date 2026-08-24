@@ -27,8 +27,9 @@ Para ver **preguntas frecuentes resueltas de ejemplo** (matrícula, primer semic
 ### Estructura Académica
 - [Plan de Estudios](plan-de-estudios.md) — Módulos, materias y estructura de créditos
 - [Asignaturas](asignaturas.md) — Catálogo completo de asignaturas con códigos y detalles
-- [Semicuatrimestres](semicuatrimestres.md) — Distribución temporal y reglas de matrícula por semicuatrimestre
-- [Horarios](horarios.md) — Horarios del curso 2025/2026 (Grupo 1)
+- [Semicuatrimestres 2026/2027](cursos/2026-2027/semicuatrimestres.md) — Distribución temporal y reglas de matrícula por semicuatrimestre
+- [Horarios 2026/2027](cursos/2026-2027/horarios.md) — Horarios vigentes del Grupo 1
+- [Histórico por curso](cursos/README.md) — Fichas y horarios conservados por edición
 
 ### Información Administrativa
 - [Admisión y Requisitos](admision-y-requisitos.md) — Perfil de ingreso, criterios y proceso de admisión
@@ -40,6 +41,7 @@ Para ver **preguntas frecuentes resueltas de ejemplo** (matrícula, primer semic
 ### Campus y Vida Universitaria
 - [Campus Puerta de Toledo](campus.md) — Ubicación, cómo llegar, aulas, biblioteca, servicios y zona
 - [Recursos y Herramientas](recursos-herramientas.md) — Lenguajes, frameworks y herramientas por asignatura
+- [Usar la Wiki con IA](usar-con-ia.md) — Instalación de skills en Cursor y Claude, ejemplos de preguntas y límites
 - [FAQ](faq.md) — Preguntas frecuentes sobre matrícula, exámenes, prácticas y más
 - [Contactos Útiles](contactos.md) — Oficinas, delegación, servicios UC3M
 
@@ -56,7 +58,7 @@ Para ver **preguntas frecuentes resueltas de ejemplo** (matrícula, primer semic
 - [Solicitud de Admisión](https://aplicaciones.uc3m.es/paa/login)
 - [Secretaría Virtual](https://secretaria-virtual.uc3m.es/)
 - [Aula Global](https://aulaglobal.uc3m.es/)
-- [Calendario Postgrado 2025-2026](https://www.uc3m.es/ss/Satellite/Postgrado/es/TextoMixta/1371210936498/Calendario_academico)
+- [Calendario de Postgrado 2026-2027](https://www.uc3m.es/secretaria-virtual/media/secretaria-virtual/doc/archivo/doc_calendario-2026-2027/uc3m_calendario-academico-postgrado-26-27.pdf)
 
 ---
 
@@ -70,12 +72,14 @@ Para ver **preguntas frecuentes resueltas de ejemplo** (matrícula, primer semic
 | Prácticas externas | 6 ECTS |
 | TFM | 6 ECTS |
 | Plazas ofertadas | 40 |
-| Precio UE | 130 €/ECTS (7.800 € total) |
-| Precio no UE | 195 €/ECTS (11.700 € total) |
+| Precio UE | 130 €/ECTS (7.800 € total) — última tarifa publicada, 2025/2026 |
+| Precio no UE | 195 €/ECTS (11.700 € total) — última tarifa publicada, 2025/2026 |
 | Duración | 1 año (4 semicuatrimestres) |
 
 ---
 
-*Wiki mantenida por la Delegación de Estudiantes del MAIA — Curso 2025/2026*
+*Wiki mantenida por la Delegación de Estudiantes del MAIA — Curso 2026/2027*
 
 ¿Quieres mejorar algo? Ver [CONTRIBUTING.md](../CONTRIBUTING.md) en la raíz del repositorio.
+
+Para conocer la fecha y la fuente de cada actualización, consulta [LOG.md](../LOG.md).

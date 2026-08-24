@@ -34,9 +34,13 @@ La **comisión académica del máster** decide qué complementos debe cursar cad
 
 ## Calendario
 
-Los horarios de los Complementos Formativos se publican antes del inicio del curso. Se imparten **antes** o en paralelo con las primeras semanas del máster.
+Para el curso **2026/2027**, la web del máster publica esta organización:
 
-> Para el curso 2026/27, los horarios se publicarán próximamente en la [web oficial](https://www.uc3m.es/master/inteligencia-artificial-aplicada).
+| Fechas | Horario | Modalidad |
+|--------|---------|-----------|
+| 26 de agosto – 2 de septiembre de 2026 | Lunes a viernes, 10:00–12:30 | Online |
+
+> Revisión: 24 de agosto de 2026. La comisión académica comunica a cada estudiante qué complementos debe cursar; confirma siempre las sesiones concretas en la [web oficial](https://www.uc3m.es/master/inteligencia-artificial-aplicada) y en las comunicaciones de la UC3M.
 
 ---
 

@@ -70,30 +70,30 @@ flowchart LR
 ### Materia: Fundamentos de la IA
 | Código | Asignatura | ECTS | Tipo | Semi |
 |--------|-----------|------|------|------|
-| 19204 | [Aprendizaje Automático](asignaturas/aprendizaje-automatico.md) | 3 | OP | S1 |
-| 19200 | [Búsqueda y Optimización](asignaturas/busqueda-y-optimizacion.md) | 3 | OP | S1 |
-| 19202 | [Computación Evolutiva](asignaturas/computacion-evolutiva.md) | 3 | OP | S1 |
+| 19204 | [Aprendizaje Automático](cursos/2026-2027/asignaturas/aprendizaje-automatico.md) | 3 | OP | S1 |
+| 19200 | [Búsqueda y Optimización](cursos/2026-2027/asignaturas/busqueda-y-optimizacion.md) | 3 | OP | S1 |
+| 19202 | [Computación Evolutiva](cursos/2026-2027/asignaturas/computacion-evolutiva.md) | 3 | OP | S1 |
 
 ### Materia: Aprendizaje Automático Avanzado
 | Código | Asignatura | ECTS | Tipo | Semi |
 |--------|-----------|------|------|------|
-| 19199 | [Aprend. Automático en Series Temporales y Flujos de Datos](asignaturas/series-temporales.md) | 3 | OP | S1 |
-| 19209 | [Aprendizaje por Refuerzo](asignaturas/aprendizaje-por-refuerzo.md) | 3 | OP | S2 |
-| 19203 | [Redes de Neuronas](asignaturas/redes-de-neuronas.md) | 3 | OP | S1 |
-| 19206 | [Aprendizaje Profundo](asignaturas/aprendizaje-profundo.md) | 3 | OP | S2 |
+| 19199 | [Aprend. Automático en Series Temporales y Flujos de Datos](cursos/2026-2027/asignaturas/series-temporales.md) | 3 | OP | S1 |
+| 19209 | [Aprendizaje por Refuerzo](cursos/2026-2027/asignaturas/aprendizaje-por-refuerzo.md) | 3 | OP | S2 |
+| 19203 | [Redes de Neuronas](cursos/2026-2027/asignaturas/redes-de-neuronas.md) | 3 | OP | S1 |
+| 19206 | [Aprendizaje Profundo](cursos/2026-2027/asignaturas/aprendizaje-profundo.md) | 3 | OP | S2 |
 
 ### Materia: Razonamiento y Planificación
 | Código | Asignatura | ECTS | Tipo | Semi |
 |--------|-----------|------|------|------|
-| 19198 | [Representación del Conocimiento y Razonamiento](asignaturas/representacion-conocimiento.md) | 3 | OP | S1 |
-| 19205 | [Agentes y Sistemas Multiagente](asignaturas/agentes-multiagente.md) | 3 | OP | S1 |
-| 19207 | [Planificación Automática](asignaturas/planificacion-automatica.md) | 3 | OP | S2 |
+| 19198 | [Representación del Conocimiento y Razonamiento](cursos/2026-2027/asignaturas/representacion-conocimiento.md) | 3 | OP | S1 |
+| 19205 | [Agentes y Sistemas Multiagente](cursos/2026-2027/asignaturas/agentes-multiagente.md) | 3 | OP | S1 |
+| 19207 | [Planificación Automática](cursos/2026-2027/asignaturas/planificacion-automatica.md) | 3 | OP | S2 |
 
 ### Materia: Modelos Probabilísticos e Incertidumbre
 | Código | Asignatura | ECTS | Tipo | Semi |
 |--------|-----------|------|------|------|
-| 19201 | [Métodos Probabilísticos en IA](asignaturas/metodos-probabilisticos.md) | 3 | OP | S1 |
-| 19208 | [Razonamiento con Incertidumbre](asignaturas/razonamiento-incertidumbre.md) | 3 | OP | S2 |
+| 19201 | [Métodos Probabilísticos en IA](cursos/2026-2027/asignaturas/metodos-probabilisticos.md) | 3 | OP | S1 |
+| 19208 | [Razonamiento con Incertidumbre](cursos/2026-2027/asignaturas/razonamiento-incertidumbre.md) | 3 | OP | S2 |
 
 ---
 
@@ -104,23 +104,23 @@ flowchart LR
 ### Materia: Técnicas Aplicadas
 | Código | Asignatura | ECTS | Tipo | Semi |
 |--------|-----------|------|------|------|
-| 19210 | [Analítica de Negocio](asignaturas/analitica-de-negocio.md) | 3 | OP | S4 |
-| 19211 | [Procesamiento de Lenguaje Natural](asignaturas/procesamiento-lenguaje-natural.md) | 3 | OP | S2 |
-| 19212 | [Vehículos Autónomos](asignaturas/vehiculos-autonomos.md) | 3 | OP | S2 |
-| 19217 | [Visión Artificial](asignaturas/vision-artificial.md) | 3 | OP | S3 |
+| 19210 | [Analítica de Negocio](cursos/2026-2027/asignaturas/analitica-de-negocio.md) | 3 | OP | S4 |
+| 19211 | [Procesamiento de Lenguaje Natural](cursos/2026-2027/asignaturas/procesamiento-lenguaje-natural.md) | 3 | OP | S2 |
+| 19212 | [Vehículos Autónomos](cursos/2026-2027/asignaturas/vehiculos-autonomos.md) | 3 | OP | S2 |
+| 19217 | [Visión Artificial](cursos/2026-2027/asignaturas/vision-artificial.md) | 3 | OP | S3 |
 
 ### Materia: Aplicaciones
 | Código | Asignatura | ECTS | Tipo | Semi |
 |--------|-----------|------|------|------|
-| 19213 | [Web Semántica y Buscadores](asignaturas/web-semantica.md) | 3 | OP | S3 |
-| 19214 | [IA en Educación](asignaturas/ia-en-educacion.md) | 3 | OP | S3 |
-| 19215 | [IA en Finanzas](asignaturas/ia-en-finanzas.md) | 3 | OP | S3 |
-| 19216 | [IA en Salud](asignaturas/ia-en-salud.md) | 3 | OP | S3 |
-| 19218 | [IA y Desarrollo Sostenible](asignaturas/ia-desarrollo-sostenible.md) | 3 | OP | S3 |
-| 19219 | [Robótica Inteligente](asignaturas/robotica-inteligente.md) | 3 | OP | S3 |
-| 19222 | [Fábricas Inteligentes](asignaturas/fabricas-inteligentes.md) | 3 | OP | S4 |
-| 19223 | [Ciudades Inteligentes](asignaturas/ciudades-inteligentes.md) | 3 | OP | S4 |
-| 19224 | [Inteligencia Ambiental](asignaturas/inteligencia-ambiental.md) | 3 | OP | S2 |
+| 19213 | [Web Semántica y Buscadores](cursos/2026-2027/asignaturas/web-semantica.md) | 3 | OP | S3 |
+| 19214 | [IA en Educación](cursos/2026-2027/asignaturas/ia-en-educacion.md) | 3 | OP | S3 |
+| 19215 | [IA en Finanzas](cursos/2026-2027/asignaturas/ia-en-finanzas.md) | 3 | OP | S3 |
+| 19216 | [IA en Salud](cursos/2026-2027/asignaturas/ia-en-salud.md) | 3 | OP | S3 |
+| 19218 | [IA y Desarrollo Sostenible](cursos/2026-2027/asignaturas/ia-desarrollo-sostenible.md) | 3 | OP | S3 |
+| 19219 | [Robótica Inteligente](cursos/2026-2027/asignaturas/robotica-inteligente.md) | 3 | OP | S3 |
+| 19222 | [Fábricas Inteligentes](cursos/2026-2027/asignaturas/fabricas-inteligentes.md) | 3 | OP | S4 |
+| 19223 | [Ciudades Inteligentes](cursos/2026-2027/asignaturas/ciudades-inteligentes.md) | 3 | OP | S4 |
+| 19224 | [Inteligencia Ambiental](cursos/2026-2027/asignaturas/inteligencia-ambiental.md) | 3 | OP | S2 |
 
 ---
 
@@ -128,8 +128,8 @@ flowchart LR
 
 | Código | Asignatura | ECTS | Tipo | Semi |
 |--------|-----------|------|------|------|
-| 19197 | [Implicaciones Éticas y Legales de la IA](asignaturas/implicaciones-eticas.md) | 3 | **O** | S1 |
-| 19225 | [Emprendimiento en IA](asignaturas/emprendimiento-ia.md) | 3 | OP | S4 |
+| 19197 | [Implicaciones Éticas y Legales de la IA](cursos/2026-2027/asignaturas/implicaciones-eticas.md) | 3 | **O** | S1 |
+| 19225 | [Emprendimiento en IA](cursos/2026-2027/asignaturas/emprendimiento-ia.md) | 3 | OP | S4 |
 
 ---
 

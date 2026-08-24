@@ -10,6 +10,10 @@ El **Máster Universitario en Inteligencia Artificial Aplicada (MAIA)** se impar
 
 Este repositorio centraliza documentación útil (plan de estudios, asignaturas, horarios, prácticas, FAQ, contactos…) y **skills** (instrucciones para el agente) para **Cursor** o **Claude**: clonas el repo, conectas las skills y el agente responde leyendo la `wiki/`.
 
+## [Abrir el planificador web →](https://maia-uc3m-wiki.vercel.app/)
+
+Construye tu horario, comprueba restricciones generales y por semicuatrimestre, detecta solapes y exporta el resultado a calendario.
+
 > **Importante:** la UC3M es la fuente de verdad para normativa, calendarios y precios. Si hay discrepancia entre esta wiki y la web oficial o la secretaría, **prevalece siempre la información oficial**.
 
 ### Solo quiero leer en GitHub
@@ -27,11 +31,13 @@ Flujo recomendado: **tener el repositorio en tu ordenador**, **hacer que Cursor 
    git clone https://github.com/jorgegarcelan/maia-uc3m-wiki.git
    cd maia-uc3m-wiki
    ```
-2. **Cursor:** abre esta carpeta como proyecto (**File → Open Folder**). Las skills están en [`.cursor/skills/`](.cursor/skills/). En el chat del agente, invoca una skill con `@` y el nombre de la carpeta (por ejemplo `@maia-wiki`).
-3. **Claude (Claude Code u otras apps que usen `SKILL.md`):** las mismas skills están en **`.claude/skills/`** (sincronizadas con `.cursor/skills/` en este repo). Si solo ves una carpeta, copia desde `.cursor/skills/` según la documentación de tu cliente.
-4. **Pregunta al agente** (horarios, optativas, plan de créditos, compatibilidad laboral, etc.). Para planes o tablas complejas, suele funcionar mejor mencionar la skill adecuada (por ejemplo `@plan-master` o `@comparador-horarios`).
+2. **Cursor:** abre esta carpeta como proyecto (**File → Open Folder**). Cursor descubre automáticamente [`.cursor/skills/`](.cursor/skills/); escribe `/` en Agent chat para verlas o pregunta directamente.
+3. **Claude Code:** inicia `claude` desde la raíz del repositorio. Claude descubre [`.claude/skills/`](.claude/skills/) y permite invocarlas con `/nombre`, por ejemplo `/maia-wiki`.
+4. **Pregunta al agente** (horarios, optativas, plan de créditos, compatibilidad laboral, etc.). Para planes o tablas complejas puedes invocar `/plan-master` o `/comparador-horarios`.
 
 Si algo no cuadra con la web de la UC3M o la secretaría, **manda siempre sobre la información oficial**.
+
+La guía completa, con instalación global, ejemplos de prompts y solución de problemas, está en [**Usar MAIA Wiki con IA**](wiki/usar-con-ia.md).
 
 ---
 
@@ -45,10 +51,10 @@ Si algo no cuadra con la web de la UC3M o la secretaría, **manda siempre sobre 
 | Prácticas externas | 6 ECTS |
 | TFM | 6 ECTS |
 | Duración | 1 año académico (4 semicuatrimestres) |
-| Horario | Tardes, 16:00–21:00 |
+| Horario | Principalmente tardes, con sesiones publicadas entre 14:30 y 21:00 |
 | Plazas | 40 |
-| Precio UE | 130 €/ECTS (7.800 € total) |
-| Precio no UE | 195 €/ECTS (11.700 € total) |
+| Precio UE | 130 €/ECTS (7.800 € total) — última tarifa publicada, 2025/2026 |
+| Precio no UE | 195 €/ECTS (11.700 € total) — última tarifa publicada, 2025/2026 |
 
 ---
 
@@ -61,10 +67,10 @@ MAIA/
 ├── wiki/                   # Documentación completa del máster
 │   ├── README.md           # Índice general de la wiki
 │   ├── plan-de-estudios.md
-│   ├── asignaturas.md      # Catálogo completo (~25 fichas individuales)
-│   ├── asignaturas/        # Una ficha .md por asignatura
-│   ├── semicuatrimestres.md
-│   ├── horarios.md
+│   ├── asignaturas.md      # Catálogo completo de 27 asignaturas
+│   ├── cursos/             # Base de datos separada por curso académico
+│   │   ├── 2025-2026/      # Snapshot histórico
+│   │   └── 2026-2027/      # Edición activa: fichas, horarios y semis
 │   ├── admision-y-requisitos.md
 │   ├── matricula-y-precios.md
 │   ├── becas.md
@@ -77,6 +83,7 @@ MAIA/
 │   ├── doble-master.md
 │   └── contactos.md
 ├── ejemplos/               # Preguntas y respuestas de ejemplo
+├── LOG.md                  # Fecha, archivos y fuentes de cada actualización
 ├── CONTRIBUTING.md         # Cómo proponer cambios (GitHub o delegación)
 ├── LICENSE                 # CC BY-SA 4.0
 ├── .cursor/skills/         # Skills del agente (Cursor)
@@ -98,20 +105,20 @@ Wiki mantenida por la delegación de estudiantes. Cubre todo el ciclo del máste
 | **Campus y recursos** | Campus Puerta de Toledo, software y herramientas por asignatura, FAQ, contactos |
 | **Personas y programas** | Profesorado, doble máster (Ing. Informática + IA Aplicada) |
 
-Entra por el [**índice de la wiki**](wiki/README.md).
+Entra por el [**índice de la wiki**](wiki/README.md). Los datos que cambian cada año se conservan en el [histórico por curso](wiki/cursos/README.md) y todas las actualizaciones quedan anotadas en [LOG.md](LOG.md).
 
 ---
 
 ### [`.cursor/skills/`](.cursor/skills/) — Skills del agente
 
-Definen **qué debe hacer el agente** y **qué archivos leer** en `wiki/`. En **Cursor**, úsalas con `@nombre-de-la-carpeta`. En **Claude**, impórtalas según el paso 3 de [Usar la wiki con IA](#usar-la-wiki-con-ia).
+Definen **qué debe hacer el agente** y **qué archivos leer** en `wiki/`. Cursor y Claude Code las descubren automáticamente al abrir la raíz del proyecto; para invocarlas de forma explícita usa `/nombre-de-la-skill`.
 
 | Skill | Qué hace |
 |-------|----------|
 | [`maia-wiki`](.cursor/skills/maia-wiki/SKILL.md) | Consulta general sobre cualquier aspecto del máster: asignaturas, horarios, admisión, profesorado, becas… |
 | [`plan-master`](.cursor/skills/plan-master/SKILL.md) | Genera un plan de matrícula personalizado según tus intereses y restricciones |
 | [`comparador-horarios`](.cursor/skills/comparador-horarios/SKILL.md) | Detecta solapamientos entre asignaturas y muestra la parrilla semanal (Grupo 1) |
-| [`configurador-horario`](.cursor/skills/configurador-horario/SKILL.md) | Abre el configurador visual (`tools/horario/`) y exporta a `.ics` |
+| [`configurador-horario`](.cursor/skills/configurador-horario/SKILL.md) | Abre el [planificador web](https://maia-uc3m-wiki.vercel.app/) y permite exportar a `.ics` |
 | [`itinerarios-tipo`](.cursor/skills/itinerarios-tipo/SKILL.md) | Recomienda itinerarios predefinidos por perfil profesional (ML Engineer, NLP, Robótica, etc.) |
 | [`mapa-prerrequisitos`](.cursor/skills/mapa-prerrequisitos/SKILL.md) | Muestra las dependencias y el orden recomendado entre asignaturas |
 | [`tracker-entregas`](.cursor/skills/tracker-entregas/SKILL.md) | Genera un tracker personalizado de entregas y evaluaciones por semicuatrimestre |
@@ -146,7 +153,7 @@ Respuestas de muestra para que veas qué tipo de ayuda puedes obtener con la wik
 - [Solicitud de admisión (PAA)](https://aplicaciones.uc3m.es/paa/login)
 - [Secretaría Virtual](https://secretaria-virtual.uc3m.es/)
 - [Aula Global](https://aulaglobal.uc3m.es/)
-- [Calendario académico Postgrado 2025-2026](https://www.uc3m.es/ss/Satellite/Postgrado/es/TextoMixta/1371210936498/Calendario_academico)
+- [Calendario académico de Postgrado 2026-2027](https://www.uc3m.es/secretaria-virtual/media/secretaria-virtual/doc/archivo/doc_calendario-2026-2027/uc3m_calendario-academico-postgrado-26-27.pdf)
 
 ---
 
@@ -160,4 +167,17 @@ El contenido del repositorio se publica bajo **CC BY-SA 4.0** ([`LICENSE`](LICEN
 
 ---
 
-*Curso de referencia: **2025/2026** — actualizar cuando comience el siguiente curso.*
+*Curso de referencia: **2026/2027**.*
+
+---
+
+## Planificador web
+
+El repositorio incluye una aplicación web para construir el horario del MAIA, comprobar los requisitos de créditos, detectar solapamientos y exportar el resultado a calendario.
+
+```bash
+npm install
+npm run dev
+```
+
+La aplicación está preparada para desplegarse en Vercel importando este repositorio. Vercel detectará Vite y ejecutará automáticamente `npm run build`.

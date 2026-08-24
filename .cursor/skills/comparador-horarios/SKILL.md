@@ -5,19 +5,20 @@ description: Detecta solapamientos entre asignaturas del MAIA y muestra parrilla
 
 # Comparador de horarios MAIA
 
-Analiza **solapes** en el horario del **Grupo 1** (tarde 16:00–21:00, Puerta de Toledo) usando la wiki.
+Analiza **solapes** en el horario del **Grupo 1** (sesiones publicadas entre 14:30 y 21:00, Puerta de Toledo) usando la wiki.
 
 ## Fuentes
 
-- `wiki/horarios.md` — tablas por S1, S2, S3, S4
+- `wiki/cursos/2026-2027/horarios.md` — tablas por S1, S2, S3, S4
 - `wiki/asignaturas.md` — nombres abreviados que aparecen en la parrilla (p. ej. PLN, INF)
-- Configurador visual (opcional): `tools/horario/index.html` → skill `@configurador-horario`
+- Datos exactos del planificador: `src/data.js`
+- Configurador visual: <https://maia-uc3m-wiki.vercel.app/> → skill `configurador-horario`
 
 ## Qué hacer
 
 1. Pide al usuario la **lista de asignaturas** (o semicuatrimestre concreto) si no la dio.
-2. Para cada **semicuatrimestre** relevante, localiza en `wiki/horarios.md` en qué **día + franja horaria** cae cada asignatura.
-3. Detecta **conflictos**: misma celda (día y bloque 16:00–17:30, 17:45–19:15, 19:30–21:00) con dos asignaturas distintas.
+2. Para cada **semicuatrimestre** relevante, localiza en el horario en qué **día + intervalo exacto** cae cada asignatura.
+3. Detecta **conflictos por intersección real de horas**, incluyendo la sesión especial de las 14:30 y las sesiones de Inteligencia Ambiental que empiezan a las 16:30.
 4. Presenta:
    - Lista de **solapes** (si hay).
    - **Parrilla ASCII o tabla** resumida solo con las asignaturas elegidas.

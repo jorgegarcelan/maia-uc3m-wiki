@@ -64,7 +64,7 @@ flowchart TD
     F -->|Admitido| G["💳 Reserva de plaza\n800 €"]
     F -->|No admitido| H["❌ Fin del proceso"]
     G --> I["📋 Matrícula oficial"]
-    I --> J["🎓 Inicio del Máster\nSeptiembre 2025"]
+    I --> J["🎓 Inicio del Máster\n7 de septiembre de 2026"]
 ```
 
 1. Accede a la [aplicación de admisiones](https://aplicaciones.uc3m.es/paa/login)

@@ -5,12 +5,12 @@ description: Recomienda itinerarios de matrícula MAIA por perfil (ML Engineer, 
 
 # Itinerarios tipo MAIA
 
-Propón un **itinerario orientativo** (no único ni oficial) alineado con la wiki. Luego el usuario puede afinarlo con `@plan-master` o `@comparador-horarios`.
+Propón un **itinerario orientativo** (no único ni oficial) alineado con la wiki. Luego el usuario puede afinarlo con `plan-master` o `comparador-horarios`.
 
 ## Fuentes
 
-- `wiki/asignaturas.md`, `wiki/semicuatrimestres.md`, `wiki/plan-de-estudios.md`
-- Fichas en `wiki/asignaturas/*.md` para detalle
+- `wiki/asignaturas.md`, `wiki/cursos/2026-2027/semicuatrimestres.md`, `wiki/plan-de-estudios.md`
+- Fichas en `wiki/cursos/2026-2027/asignaturas/*.md` para detalle
 
 ## Perfiles predefinidos
 
@@ -21,7 +21,7 @@ Ajusta códigos y nombres leyendo `wiki/asignaturas.md`. Resumen orientativo:
 | Semi | Asignaturas orientativas |
 |------|--------------------------|
 | S1 | Aprendizaje Automático (19204), Redes de Neuronas (19203), Métodos Probabilísticos (19201) + Éticas (19197) |
-| S2 | Aprendizaje Profundo (19206), Series Temporales (19199) o Refuerzo (19209), Razonamiento con Incertidumbre (19208) |
+| S2 | Aprendizaje Profundo (19206), Refuerzo (19209), Razonamiento con Incertidumbre (19208) u otra optativa compatible |
 | S3 | Visión Artificial (19217), PLN (19211) u otra técnica M2 |
 | S4 | Prácticas (19226) + TFM (19227) + opcional Analítica de Negocio (19210) |
 
@@ -70,6 +70,7 @@ Ajusta códigos y nombres leyendo `wiki/asignaturas.md`. Resumen orientativo:
 ## Qué hacer
 
 1. Pregunta **perfil** o infiere por el mensaje del usuario.
-2. Entrega itinerario **S1→S4** con códigos, ECTS por asignatura (3 salvo prácticas/TFM) y totales M1/M2.
+2. Entrega itinerario **S1→S4** con códigos, ECTS por asignatura (3 salvo prácticas/TFM) y totales M1/M2/M3.
 3. Menciona **alternativas** (una asignatura sustituta del mismo semi en `asignaturas.md`).
-4. Invita a validar horarios con `@comparador-horarios` o `@configurador-horario`.
+4. Invita a validar horarios con `comparador-horarios` o `configurador-horario`.
+5. Comprueba que el resultado suma 60 ECTS y respeta M1 15–24, M2 18–30 y M3 3–6 ECTS.

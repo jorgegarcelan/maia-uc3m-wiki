@@ -10,13 +10,13 @@ La wiki documenta prerrequisitos **por asignatura** en cada ficha (`## Prerrequi
 ## Fuentes
 
 - `wiki/asignaturas.md` — listado y semicuatrimestre
-- `wiki/asignaturas/<nombre>.md` — sección **Prerrequisitos** y temario
+- `wiki/cursos/2026-2027/asignaturas/<nombre>.md` — sección **Prerrequisitos** y temario
 - `wiki/plan-de-estudios.md` — agrupación por materias
 
 ## Qué hacer
 
 1. Identifica las asignaturas objetivo del usuario (p. ej. Aprendizaje Profundo, PLN, Robótica).
-2. Lee la sección **Prerrequisitos** de cada ficha en `wiki/asignaturas/`.
+2. Lee la sección **Prerrequisitos** de cada ficha en `wiki/cursos/2026-2027/asignaturas/`.
 3. Construye:
    - **Lista** de conocimientos o asignaturas previas citadas en la wiki.
    - **Orden sugerido** respetando el **semicuatrimestre** del catálogo (no matricular en S2 lo que la wiki sitúa en S3 salvo que el usuario ya lo tenga aprobado).
@@ -32,7 +32,7 @@ La wiki documenta prerrequisitos **por asignatura** en cada ficha (`## Prerrequi
 | Visión / Robótica (S3) | AA, Redes o Aprendizaje Profundo en S2 |
 | Refuerzo, Planificación (S2) | AA, Métodos Probabilísticos, Representación del Conocimiento |
 
-**Siempre** contrasta con el texto exacto de cada `wiki/asignaturas/*.md`; no inventes prerrequisitos no escritos.
+**Siempre** contrasta con el texto exacto de cada ficha activa; no inventes prerrequisitos no escritos.
 
 ## Salida
 

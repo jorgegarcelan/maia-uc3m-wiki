@@ -4,7 +4,7 @@ Esta carpeta recoge **preguntas típicas** y **ejemplos de respuesta** que puede
 
 Sirven como referencia de **qué tipo de información** se puede sintetizar y **en qué formato** suele presentarse.
 
-> Los contenidos basan la información académica en la wiki del repo (**curso 2025/2026**). Las normas definitivas son siempre las publicadas por la UC3M.
+> Los contenidos usan la edición **2026/2027**, revisada el 24 de agosto de 2026. Las normas y cambios posteriores publicados por la UC3M prevalecen siempre.
 
 ## Índice de ejemplos
 
@@ -19,5 +19,6 @@ Sirven como referencia de **qué tipo de información** se puede sintetizar y **
 
 - [Índice de la wiki](../wiki/README.md)
 - [Plan de estudios](../wiki/plan-de-estudios.md)
-- [Semicuatrimestres](../wiki/semicuatrimestres.md)
-- [Horarios](../wiki/horarios.md)
+- [Semicuatrimestres 2026/2027](../wiki/cursos/2026-2027/semicuatrimestres.md)
+- [Horarios 2026/2027](../wiki/cursos/2026-2027/horarios.md)
+- [Registro de actualizaciones](../LOG.md)

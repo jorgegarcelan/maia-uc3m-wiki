@@ -6,7 +6,7 @@ title: "[corrección] "
 
 ## Archivo o sección
 
-<!-- Ej.: wiki/horarios.md — tabla Grupo 1 -->
+<!-- Ej.: wiki/cursos/2026-2027/horarios.md — tabla Grupo 1 -->
 
 ## Qué está mal y cómo debería ser
 

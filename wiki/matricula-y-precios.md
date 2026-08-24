@@ -4,7 +4,9 @@
 
 ---
 
-## Precios (Curso 2025/2026)
+## Últimos precios publicados
+
+> **Aviso para 2026/2027:** a 24 de agosto de 2026, la web del máster sigue mostrando las tarifas de **2025/2026** e indica que los precios de 2026/2027 están pendientes de aprobación por la Comunidad de Madrid. Las cifras siguientes son la última referencia oficial publicada, no una confirmación del precio del curso nuevo.
 
 ### Reserva de Plaza
 - **800 €** (se abona tras recibir la admisión, se descuenta del primer pago de matrícula)
@@ -71,6 +73,6 @@ Si quieres complementar con formación en Administración de Empresas:
 
 ---
 
-*Precios vigentes para el curso 25/26, pendientes de aprobación por la Comunidad de Madrid para el curso 26/27.*
+*Tarifas publicadas para 2025/2026. Revisión de la página oficial: 24 de agosto de 2026.*
 
 *Fuente: [Matrícula - Web del Máster UC3M](https://www.uc3m.es/master/inteligencia-artificial-aplicada#matricula)*

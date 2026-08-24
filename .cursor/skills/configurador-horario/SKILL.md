@@ -3,9 +3,9 @@ name: configurador-horario
 description: Abre el configurador visual de horarios MAIA UC3M en el navegador. Úsala cuando el usuario diga "abre el configurador", "configurar horario", "abre el horario", "elegir asignaturas", "planificar mi máster", "abre el planner", "ver horario visual" o similares.
 ---
 
-# Configurador de Horario MAIA — Skill
+# Configurador de horario MAIA
 
-Esta skill abre `tools/horario/index.html` en el navegador por defecto del usuario para que pueda configurar su horario de forma visual (elegir asignaturas, ver ECTS por módulo, exportar a `.ics`, etc.).
+Abre el planificador web del MAIA para elegir asignaturas, comprobar restricciones y solapes, guardar varios planes y exportar el horario a `.ics`.
 
 ## Cuándo dispararse
 
@@ -20,32 +20,11 @@ Cuando el usuario pida cosas como:
 
 ## Qué hacer
 
-1. **Confirma la ubicación del archivo**: debe existir en `tools/horario/index.html` desde la raíz del repo. Si no existe, avisa al usuario.
-
-2. **Ábrelo en el navegador** con el comando apropiado al sistema operativo:
-
-   ```bash
-   # macOS
-   open "tools/horario/index.html"
-
-   # Linux
-   xdg-open "tools/horario/index.html"
-
-   # Windows (Git Bash)
-   start "tools/horario/index.html"
-   ```
-
-   Detecta el SO con `uname` si no estás seguro. En este repo el usuario trabaja en macOS, así que `open` es el comando por defecto.
-
-3. **Confirma al usuario** brevemente que el configurador está abierto y recuérdale las funciones principales:
-   - Click en celdas → marcar asignaturas como cursadas
-   - Selector S1/S2/S3/S4/Año → cambiar semicuatrimestre
-   - Plantillas → cargar planes predefinidos (técnico, aplicado, equilibrado, mínimo)
-   - Botón "Exportar a calendario (.ics)" → descargar para Google/Apple Calendar
-   - La selección se guarda automáticamente en el navegador
+1. Abre <https://maia-uc3m-wiki.vercel.app/> con la herramienta de navegación disponible. Si no puedes abrir páginas, comparte ese enlace.
+2. Si el usuario quiere ejecutar su copia local, indica `npm install` y `npm run dev`; usa el puerto que Vite asigne, sin asumir que 5173 está libre.
+3. Resume solo las funciones relevantes: selección por S1–S4, restricciones generales y por semi, detección de solapes, varios planes, enlace compartible y exportación `.ics`.
 
 ## Notas
 
-- El archivo es autocontenido (HTML + CSS + JS vanilla), no requiere servidor ni dependencias.
-- La selección persiste en `localStorage` del navegador, así que si lo abre en otro navegador o ventana de incógnito empezará vacío.
-- Datos de horario y asignaturas embebidos desde `wiki/horarios.md` y `wiki/asignaturas.md`.
+- La selección persiste en `localStorage`; otro navegador o una ventana privada empiezan con un plan nuevo.
+- La edición activa es 2026/2027. La UC3M puede modificar horarios, así que hay que contrastar las sesiones con la publicación oficial enlazada en la web.

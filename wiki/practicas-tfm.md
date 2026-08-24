@@ -116,12 +116,15 @@ Consulta la **normativa de TFM** de la UC3M para el formato exacto. Estructura t
 5. Conclusiones y trabajo futuro
 6. Bibliografía
 
-### Convocatorias
+### Convocatorias 2026/2027
 
-| Convocatoria | Entrega | Defensa |
-|-------------|---------|---------|
-| Ordinaria (junio) | Mayo – Junio | Junio – Julio |
-| Extraordinaria (septiembre) | Septiembre | Septiembre |
+| Convocatoria | Límite de entrega | Defensa |
+|-------------|-------------------|---------|
+| Febrero | 1 de febrero de 2027 | 15–16 de febrero de 2027 |
+| Julio | 21 de junio de 2027 | 5–6 de julio de 2027 |
+| Septiembre | 13 de septiembre de 2027 | 27–28 de septiembre de 2027 |
+
+> Fechas extraídas del calendario específico del MAIA 2026/2027. La Secretaría Virtual y el Aula Global concretan el procedimiento y la hora asignada a cada defensa.
 
 ### Consejos
 
@@ -136,6 +139,7 @@ Consulta la **normativa de TFM** de la UC3M para el formato exacto. Estructura t
 ## Normativa
 
 - [Normativa de TFM UC3M](https://www.uc3m.es/ss/Satellite/Postgrado/es/TextoMixta/1371210936498/)
+- [Información oficial de matrícula y convocatorias de TFM](https://www.uc3m.es/postgrado/matricula/tfm)
 - [Normativa de Prácticas Externas](https://www.uc3m.es/ss/Satellite/Postgrado/es/TextoMixta/1371210936498/)
 
 ---

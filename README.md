@@ -2,7 +2,7 @@
 
 ## [Abrir el planificador web →](https://maia-uc3m-wiki.vercel.app/)
 
-Construye tu horario, comprueba restricciones y detecta solapes antes de matricularte.
+Construye tu horario, comprueba restricciones generales y por semicuatrimestre, detecta solapes y exporta el resultado a calendario.
 
 <p align="center">
   <img src="static/maia-logo.png" alt="Logotipo MAIA — Máster en Inteligencia Artificial Aplicada (UC3M)" width="460" />
@@ -13,10 +13,6 @@ Construye tu horario, comprueba restricciones y detecta solapes antes de matricu
 El **Máster Universitario en Inteligencia Artificial Aplicada (MAIA)** se imparte en la **Escuela de Postgrado en Ingeniería y Ciencias Básicas**, campus **Madrid — Puerta de Toledo**, en modalidad **presencial** (**60 ECTS**, en **español**).
 
 Este repositorio centraliza documentación útil (plan de estudios, asignaturas, horarios, prácticas, FAQ, contactos…) y **skills** (instrucciones para el agente) para **Cursor** o **Claude**: clonas el repo, conectas las skills y el agente responde leyendo la `wiki/`.
-
-## [Abrir el planificador web →](https://maia-uc3m-wiki.vercel.app/)
-
-Construye tu horario, comprueba restricciones generales y por semicuatrimestre, detecta solapes y exporta el resultado a calendario.
 
 > **Importante:** la UC3M es la fuente de verdad para normativa, calendarios y precios. Si hay discrepancia entre esta wiki y la web oficial o la secretaría, **prevalece siempre la información oficial**.
 

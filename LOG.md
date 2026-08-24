@@ -17,6 +17,15 @@ Las entradas se añaden en orden cronológico inverso. Si un dato oficial aún n
 
 ## Historial
 
+### 2026-08-24 — Sistema de diseño de la web
+
+- **Curso:** General
+- **Ámbito:** identidad visual, interfaz y documentación
+- **Archivos:** `DESIGN.md`
+- **Cambio:** se documentaron la dirección visual MAIA dot, los tokens, la tipografía Varela Round, los componentes, los estados, el comportamiento responsive, la accesibilidad y las reglas para ampliar la web sin perder consistencia.
+- **Fuente:** auditoría de la implementación vigente y activos de marca MAIA
+- **Estado:** verificado
+
 ### 2026-08-24 — Protección de secretos locales
 
 - **Curso:** General

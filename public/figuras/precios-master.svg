@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 376" role="img" aria-labelledby="t d" width="900" height="376">
+  <title id="t">Coste del máster MAIA según procedencia del estudiante</title>
+  <desc id="d">Estudiantes de la Unión Europea 130 euros por ECTS, 7.800 euros los 60 ECTS. Estudiantes extracomunitarios 195 euros por ECTS, 11.700 euros. Tarifas publicadas para el curso 2025/2026.</desc>
+  <defs>
+    <linearGradient id="maia" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6538f3"/><stop offset="1" stop-color="#2477f4"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#09285f"/><stop offset="1" stop-color="#041630"/>
+    </linearGradient>
+    <style>
+      text{font-family:"Varela Round",system-ui,-apple-system,"Segoe UI",sans-serif}
+      .eyebrow{font-size:11px;font-weight:700;letter-spacing:.11em;fill:#65708a}
+      .val{font-size:22px;font-weight:800;fill:#071f4a;letter-spacing:-.02em}
+      .cat{font-size:13px;font-weight:700;fill:#111d36}
+      .catmeta{font-size:11px;fill:#65708a}
+      .grid{font-size:10px;font-weight:700;fill:#a3aec4}
+      .card{font-size:12px;font-weight:700;fill:#111d36}
+      .cardmeta{font-size:11px;fill:#65708a}
+      .foot{font-size:11px;fill:#8590a8}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="374" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+  <text class="eyebrow" x="32" y="38">PRECIO DEL MÁSTER SIMPLE · 60 ECTS · TARIFAS 2025/2026</text>
+
+  <g stroke="#eef2fa" stroke-width="1">
+    <path d="M96 290 H500"/><path d="M96 242.5 H500"/><path d="M96 195 H500"/><path d="M96 147.5 H500"/><path d="M96 100 H500"/>
+  </g>
+  <g class="grid" text-anchor="end">
+    <text x="86" y="294">0 €</text>
+    <text x="86" y="246">3.000</text>
+    <text x="86" y="199">6.000</text>
+    <text x="86" y="151">9.000</text>
+    <text x="86" y="104">12.000</text>
+  </g>
+
+  <rect x="150" y="163.3" width="120" height="126.7" rx="12" fill="url(#maia)"/>
+  <text class="val" x="210" y="152" text-anchor="middle">7.800 €</text>
+  <text class="cat" x="210" y="316" text-anchor="middle">Nacionales y UE</text>
+  <text class="catmeta" x="210" y="334" text-anchor="middle">130 €/ECTS</text>
+
+  <rect x="340" y="100" width="120" height="190" rx="12" fill="url(#navy)"/>
+  <text class="val" x="400" y="89" text-anchor="middle">11.700 €</text>
+  <text class="cat" x="400" y="316" text-anchor="middle">Extracomunitarios</text>
+  <text class="catmeta" x="400" y="334" text-anchor="middle">195 €/ECTS</text>
+
+  <g>
+    <rect x="556" y="70" width="312" height="66" rx="15" fill="#f5f7fd" stroke="#dce3f1"/>
+    <rect x="556" y="70" width="5" height="66" rx="2.5" fill="#23b7e8"/>
+    <text class="card" x="582" y="98">Reserva de plaza · 800 €</text>
+    <text class="cardmeta" x="582" y="118">Se descuenta del primer pago de matrícula</text>
+
+    <rect x="556" y="150" width="312" height="66" rx="15" fill="#f5f7fd" stroke="#dce3f1"/>
+    <rect x="556" y="150" width="5" height="66" rx="2.5" fill="#583df4"/>
+    <text class="card" x="582" y="178">Doble máster · 120 ECTS</text>
+    <text class="cardmeta" x="582" y="198">74,71 €/ECTS (UE) · 174,9 €/ECTS (no UE)</text>
+
+    <rect x="556" y="230" width="312" height="66" rx="15" fill="#fff0ef" stroke="#f2d4d2"/>
+    <rect x="556" y="230" width="5" height="66" rx="2.5" fill="#c74343"/>
+    <text class="card" x="582" y="258">No incluido en el precio</text>
+    <text class="cardmeta" x="582" y="278">Complementos formativos y expedición del título</text>
+  </g>
+
+  <text class="foot" x="32" y="360">Los precios de 2026/2027 están pendientes de aprobación por la Comunidad de Madrid. Consulta siempre la web oficial antes de matricularte.</text>
+</svg>

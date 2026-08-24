@@ -19,6 +19,10 @@
 | Nacionales y comunitarios (UE) | 130 €/ECTS | **7.800 €** |
 | Extracomunitarios | 195 €/ECTS | **11.700 €** |
 
+![Comparación del coste del máster para estudiantes de la UE y extracomunitarios](../public/figuras/precios-master.svg)
+
+*Tarifas publicadas para 2025/2026. La reserva de plaza se descuenta del primer pago.*
+
 > Los precios **no incluyen** los ECTS de complementos formativos ni la tasa de expedición del título.
 
 ### Doble Máster (Ing. Informática + IA Aplicada)

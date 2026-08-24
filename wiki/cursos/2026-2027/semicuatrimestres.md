@@ -17,20 +17,9 @@ El máster se organiza en **4 semicuatrimestres** a lo largo de un curso académ
 
 \* El calendario específico del máster sitúa el final docente del S4 el **7 de mayo**; la publicación de horarios contiene sesiones de algunas asignaturas hasta el **13 de mayo**. Para asistir a clase, manda siempre la fecha concreta del horario oficial.
 
-```mermaid
-gantt
-    title Calendario Académico MAIA 2026/2027
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b %Y
+![Calendario de los cuatro semicuatrimestres del curso 2026/2027](../../../public/figuras/calendario-2026-2027.svg)
 
-    section Cuatrimestre 1
-    S1 — Fundamentos (15 ECTS)         :s1, 2026-09-07, 2026-10-23
-    S2 — Técnicas + Aplicaciones (15 ECTS) :s2, 2026-11-03, 2026-12-18
-
-    section Cuatrimestre 2
-    S3 — Aplicaciones (9–15 ECTS)      :s3, 2027-01-25, 2027-03-12
-    S4 — TFM + Prácticas (15–21 ECTS)  :crit, s4, 2027-03-30, 2027-05-07
-```
+*Cada semicuatrimestre dura entre 7 y 8 semanas; el S4 concentra prácticas y TFM.*
 
 ---
 

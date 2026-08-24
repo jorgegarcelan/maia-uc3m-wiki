@@ -47,6 +47,10 @@
 | Marzo | Formalizar convenio, empezar prácticas |
 | Mayo | Finalizar prácticas, entregar memoria |
 
+![Línea de tiempo de prácticas y TFM, de diciembre a mayo](../public/figuras/calendario-practicas-tfm.svg)
+
+*Los plazos son orientativos: la tramitación del convenio es lo que suele retrasar el inicio.*
+
 ### Consejos
 
 - Empieza a buscar empresa **pronto** (diciembre-enero), no esperes a S4

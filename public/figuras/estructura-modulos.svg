@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="t d" width="900" height="520">
+  <title id="t">Estructura del plan de estudios MAIA por módulos</title>
+  <desc id="d">Los 60 ECTS se reparten en tres módulos con mínimos y máximos (M1 de 15 a 24, M2 de 18 a 30, M3 de 3 a 6) más Prácticas Externas y Trabajo Fin de Máster, de 6 ECTS cada uno.</desc>
+  <defs>
+    <linearGradient id="maia" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2477f4"/><stop offset="1" stop-color="#6538f3"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#071f4a" flood-opacity=".07"/>
+    </filter>
+    <style>
+      text{font-family:"Varela Round",system-ui,-apple-system,"Segoe UI",sans-serif}
+      .eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;fill:#65708a}
+      .h{font-size:16px;font-weight:800;fill:#111d36;letter-spacing:-.02em}
+      .item{font-size:12px;fill:#3a465a}
+      .range{font-size:12px;font-weight:700;fill:#071f4a}
+      .brandpill{font-size:15px;font-weight:800;fill:#ffffff;letter-spacing:-.01em}
+      .fixed{font-size:13px;font-weight:800;fill:#071f4a}
+      .fixedmeta{font-size:11px;fill:#65708a}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="518" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+
+  <g filter="url(#soft)">
+    <rect x="352" y="26" width="196" height="42" rx="21" fill="url(#maia)"/>
+  </g>
+  <text class="brandpill" x="450" y="53" text-anchor="middle">MAIA · 60 ECTS</text>
+
+  <path d="M450 68 V92 M154 92 H746 M154 92 V116 M450 92 V116 M746 92 V116" stroke="#c7d3ea" stroke-width="1.5" fill="none"/>
+
+  <g filter="url(#soft)">
+    <rect x="20" y="116" width="268" height="248" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+    <rect x="316" y="116" width="268" height="248" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+    <rect x="612" y="116" width="268" height="248" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+  </g>
+  <path d="M38 116 H270" stroke="#3475f6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M334 116 H566" stroke="#583df4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M630 116 H862" stroke="#168bd8" stroke-width="4" stroke-linecap="round"/>
+
+  <g transform="translate(44,116)">
+    <text class="eyebrow" x="0" y="36">MÓDULO 1</text>
+    <text class="h" x="0" y="60">Fundamentos y Técnicas</text>
+    <rect x="0" y="74" width="126" height="24" rx="12" fill="#eaf1ff"/>
+    <text class="range" x="63" y="90" text-anchor="middle">15 – 24 ECTS</text>
+    <text class="item" x="0" y="128">· Fundamentos de la IA</text>
+    <text class="item" x="0" y="152">· Aprendizaje Automático Avanzado</text>
+    <text class="item" x="0" y="176">· Razonamiento y Planificación</text>
+    <text class="item" x="0" y="200">· Modelos Probabilísticos</text>
+    <text class="item" x="0" y="224">  e Incertidumbre</text>
+  </g>
+
+  <g transform="translate(340,116)">
+    <text class="eyebrow" x="0" y="36">MÓDULO 2</text>
+    <text class="h" x="0" y="60">Aplicaciones</text>
+    <rect x="0" y="74" width="126" height="24" rx="12" fill="#eeebff"/>
+    <text class="range" x="63" y="90" text-anchor="middle">18 – 30 ECTS</text>
+    <text class="item" x="0" y="128">· Técnicas Aplicadas</text>
+    <text class="item" x="0" y="152">  (NLP, visión, vehículos…)</text>
+    <text class="item" x="0" y="176">· Aplicaciones sectoriales</text>
+    <text class="item" x="0" y="200">  (salud, finanzas, educación,</text>
+    <text class="item" x="0" y="224">  robótica, ciudades, industria)</text>
+  </g>
+
+  <g transform="translate(636,116)">
+    <text class="eyebrow" x="0" y="36">MÓDULO 3</text>
+    <text class="h" x="0" y="60">Ética y Emprendimiento</text>
+    <rect x="0" y="74" width="126" height="24" rx="12" fill="#e7f6ff"/>
+    <text class="range" x="63" y="90" text-anchor="middle">3 – 6 ECTS</text>
+    <text class="item" x="0" y="128">· Implicaciones Éticas y Legales</text>
+    <text class="item" x="0" y="152">  de la IA (obligatoria, S1)</text>
+    <text class="item" x="0" y="176">· Emprendimiento en IA</text>
+    <text class="item" x="0" y="200">  (optativa, S4)</text>
+  </g>
+
+  <path d="M450 68 V26" stroke="none"/>
+  <path d="M20 388 H880" stroke="#eef2fa" stroke-width="1.5" fill="none"/>
+
+  <g filter="url(#soft)">
+    <rect x="20" y="412" width="420" height="86" rx="17" fill="#f5f7fd" stroke="#dce3f1"/>
+    <rect x="460" y="412" width="420" height="86" rx="17" fill="#f5f7fd" stroke="#dce3f1"/>
+  </g>
+  <rect x="20" y="412" width="6" height="86" rx="3" fill="#23b7e8"/>
+  <rect x="460" y="412" width="6" height="86" rx="3" fill="#583df4"/>
+  <text class="eyebrow" x="48" y="442">OBLIGATORIO · S4</text>
+  <text class="fixed" x="48" y="466">Prácticas en Empresa · 6 ECTS</text>
+  <text class="fixedmeta" x="48" y="485">≈150 horas con tutor académico y tutor de empresa</text>
+  <text class="eyebrow" x="488" y="442">OBLIGATORIO · S4</text>
+  <text class="fixed" x="488" y="466">Trabajo Fin de Máster · 6 ECTS</text>
+  <text class="fixedmeta" x="488" y="485">Defensa ante tribunal de tres profesores</text>
+</svg>

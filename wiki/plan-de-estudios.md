@@ -16,50 +16,17 @@ El máster se estructura en **3 módulos** más Prácticas y TFM, con fuerte car
 | Trabajo Fin de Máster | 6 |
 | **Total** | **60** |
 
-```mermaid
-pie title Distribución de los 60 ECTS
-    "Optativas" : 45
-    "Prácticas Externas" : 6
-    "TFM" : 6
-    "Obligatoria" : 3
-```
+![Reparto de los 60 ECTS: 45 optativos, 6 de prácticas, 6 de TFM y 3 obligatorios](../public/figuras/distribucion-ects.svg)
+
+*Solo 3 de los 60 ECTS son de asignatura obligatoria: el máster es casi todo optativo.*
 
 ---
 
 ## Visión General del Plan
 
-```mermaid
-flowchart LR
-    MAIA["🎓 MAIA\n60 ECTS"]
+![Mapa del plan de estudios: MAIA 60 ECTS repartidos en tres módulos más prácticas y TFM](../public/figuras/estructura-modulos.svg)
 
-    M1["📚 Módulo 1\nFundamentos y Técnicas\n15–24 ECTS"]
-    M2["⚙️ Módulo 2\nAplicaciones\n18–30 ECTS"]
-    M3["⚖️ Módulo 3\nÉtica y Emprendimiento\n3–6 ECTS"]
-    P["🏢 Prácticas Externas\n6 ECTS"]
-    TFM["📄 TFM\n6 ECTS"]
-
-    F1["Fundamentos de la IA"]
-    F2["Aprendizaje Automático Avanzado"]
-    F3["Razonamiento y Planificación"]
-    F4["Modelos Probabilísticos e Incertidumbre"]
-
-    A1["Técnicas Aplicadas"]
-    A2["Aplicaciones Sectoriales"]
-
-    MAIA --> M1
-    MAIA --> M2
-    MAIA --> M3
-    MAIA --> P
-    MAIA --> TFM
-
-    M1 --> F1
-    M1 --> F2
-    M1 --> F3
-    M1 --> F4
-
-    M2 --> A1
-    M2 --> A2
-```
+*Los tres módulos tienen mínimos y máximos de ECTS; prácticas y TFM son fijos y se cursan en S4.*
 
 ---
 

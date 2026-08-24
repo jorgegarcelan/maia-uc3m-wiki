@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-labelledby="t d" width="900" height="250">
+  <title id="t">Baremo de admisión del máster MAIA sobre 10 puntos</title>
+  <desc id="d">Expediente académico 7 puntos, idiomas 1 punto, motivación y cartas de recomendación 1 punto, otros méritos 1 punto.</desc>
+  <defs>
+    <linearGradient id="maia" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2477f4"/><stop offset="1" stop-color="#6538f3"/>
+    </linearGradient>
+    <style>
+      text{font-family:"Varela Round",system-ui,-apple-system,"Segoe UI",sans-serif}
+      .eyebrow{font-size:11px;font-weight:700;letter-spacing:.11em;fill:#65708a}
+      .inbar{font-size:14px;font-weight:800;fill:#ffffff}
+      .inbarmeta{font-size:11px;fill:#e4ecff}
+      .label{font-size:12px;font-weight:700;fill:#111d36}
+      .pts{font-size:11px;fill:#65708a}
+      .tick{font-size:10px;font-weight:700;fill:#8590a8}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="248" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+  <text class="eyebrow" x="32" y="38">CRITERIOS DE ADMISIÓN · 10 PUNTOS</text>
+
+  <g>
+    <rect x="32" y="62" width="588" height="66" rx="14" fill="url(#maia)"/>
+    <rect x="628" y="62" width="72" height="66" rx="14" fill="#23b7e8"/>
+    <rect x="708" y="62" width="72" height="66" rx="14" fill="#583df4"/>
+    <rect x="788" y="62" width="72" height="66" rx="14" fill="#071f4a"/>
+  </g>
+  <text class="inbar" x="52" y="94">Expediente académico</text>
+  <text class="inbarmeta" x="52" y="112">de los estudios de acceso</text>
+  <text class="inbar" x="664" y="101" text-anchor="middle">1</text>
+  <text class="inbar" x="744" y="101" text-anchor="middle">1</text>
+  <text class="inbar" x="824" y="101" text-anchor="middle">1</text>
+  <text class="inbar" x="600" y="101" text-anchor="end">7</text>
+
+  <path d="M32 142 H860" stroke="#eef2fa"/>
+  <text class="tick" x="32" y="162">0 pts</text>
+  <text class="tick" x="860" y="162" text-anchor="end">10 pts</text>
+
+  <g transform="translate(32,186)">
+    <rect x="0" y="0" width="12" height="12" rx="4" fill="url(#maia)"/>
+    <text class="label" x="20" y="10">Expediente · 7 pts</text>
+    <text class="pts" x="20" y="28">Nota media de la titulación de acceso</text>
+  </g>
+  <g transform="translate(292,186)">
+    <rect x="0" y="0" width="12" height="12" rx="4" fill="#23b7e8"/>
+    <text class="label" x="20" y="10">Idiomas · 1 pt</text>
+    <text class="pts" x="20" y="28">B2 o equivalente acreditado</text>
+  </g>
+  <g transform="translate(524,186)">
+    <rect x="0" y="0" width="12" height="12" rx="4" fill="#583df4"/>
+    <text class="label" x="20" y="10">Motivación · 1 pt</text>
+    <text class="pts" x="20" y="28">Carta y recomendaciones</text>
+  </g>
+  <g transform="translate(724,186)">
+    <rect x="0" y="0" width="12" height="12" rx="4" fill="#071f4a"/>
+    <text class="label" x="20" y="10">Otros · 1 pt</text>
+    <text class="pts" x="20" y="28">Méritos adicionales</text>
+  </g>
+</svg>

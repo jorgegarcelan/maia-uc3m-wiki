@@ -150,7 +150,23 @@ Usos que se deben evitar:
 
 El patrón base usa una retícula de 30 px en escritorio y 24 px en móvil, con `--maia-dot` alrededor de un 12 % de opacidad.
 
-### 3.5 Espaciado
+### 3.5 Figuras y diagramas
+
+Las figuras de los artículos son **SVG estáticos** guardados en `public/figuras/` y referenciados desde el markdown. No se usan diagramas generados en tiempo de ejecución: la web renderiza el markdown sin Mermaid, así que un bloque de código de diagrama se vería como código.
+
+Reglas:
+
+- Lienzo de 900 px de ancho y altura variable; la web las escala al ancho del artículo.
+- Fondo blanco, borde `--border` y radio de 18 px, igual que una tarjeta de contenido.
+- Tipografía Varela Round con la cadena de reserva del sistema declarada dentro del propio SVG.
+- Un eyebrow en mayúsculas identifica la figura; el título vive en el markdown, no dentro del SVG.
+- Colores por significado: `--maia-blue` y el degradado para lo principal, `--maia-cyan` y `--maia-violet` para categorías secundarias y `--navy` para el extremo alto de una comparación.
+- Toda figura lleva `<title>` y `<desc>`, y en el markdown un `alt` descriptivo más un pie en cursiva que aporte una lectura, no una repetición del gráfico.
+- La figura acompaña a la tabla o al texto; nunca sustituye al dato exacto.
+- Ruta relativa desde el artículo (`../public/figuras/…`) para que funcione en GitHub; la web la reescribe a `/figuras/…`.
+- En móvil conserva un ancho mínimo legible dentro de un contenedor con desplazamiento horizontal y foco de teclado; no se encoge el texto interno hasta hacerlo ilegible.
+
+### 3.6 Espaciado
 
 Usar una escala base de 4 px:
 
@@ -164,7 +180,7 @@ Usar una escala base de 4 px:
 - 40–64 px: secciones de página.
 - 80 px o más: aperturas editoriales y cambios claros de contexto.
 
-### 3.6 Radios y elevación
+### 3.7 Radios y elevación
 
 | Elemento | Radio |
 | --- | ---: |
@@ -183,7 +199,7 @@ Sombra estándar:
 
 Las sombras deben ser frías, amplias y discretas. El hover puede elevar una tarjeta entre 2 y 4 px; no se usan brillos ni sombras negras duras.
 
-### 3.7 Iconografía
+### 3.8 Iconografía
 
 - Usar **Lucide React** para mantener grosor y geometría consistentes.
 - Tamaño habitual: 14–18 px en controles y 20–24 px en bloques destacados.
@@ -395,6 +411,7 @@ Todas las cifras académicas variables deben incluir curso de referencia. Cuando
 | Asignaturas, sesiones y colores | `src/data.js` |
 | Contenido académico | `wiki/` |
 | Logotipos e imagen social | `public/` |
+| Figuras de los artículos | `public/figuras/` |
 | Metadatos sociales | `index.html` |
 | Registro editorial | `LOG.md` |
 

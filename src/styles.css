@@ -947,6 +947,11 @@ a { color: inherit; text-decoration: none; }
 .markdown-body th { color: #284166; background: #f2f6fc; text-align: left; }.markdown-body th, .markdown-body td { padding: 9px 10px; border: 1px solid #dce3ee; }
 .markdown-body pre { overflow-x: auto; padding: 14px; border-radius: 8px; color: #dce6fa; background: #081d40; font-size: 11px; }
 .markdown-body hr { margin: 36px 0; border: 0; border-top: 1px solid #e1e6ef; }
+.markdown-body .article-figure-frame { margin: 26px 0 0; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; scrollbar-color: #b8c5df transparent; }
+.markdown-body .article-figure-frame:focus-visible { outline: 3px solid rgba(36,119,244,.34); outline-offset: 3px; }
+.markdown-body .article-figure-image { width: 100%; height: auto; display: block; border: 1px solid #e2e8f4; border-radius: 14px; background: #fff; }
+.markdown-body .article-figure-frame + p { margin: 10px 0 26px; color: #7a869c; font-size: 12px; line-height: 1.5; }
+.markdown-body .article-figure-frame + p em { font-style: normal; }
 .detail-aside { display: grid; gap: 12px; position: sticky; top: 14px; }
 .detail-side-card { padding: 16px; border: 1px solid #dce3ef; border-radius: 11px; background: #fff; box-shadow: var(--shadow); }
 .detail-side-card h2 { margin: 0 0 13px; color: #263651; display: flex; align-items: center; gap: 7px; font: 750 13px/1.2 "Varela Round", sans-serif; }
@@ -989,7 +994,7 @@ a { color: inherit; text-decoration: none; }
   .hero-stat-row span { min-width: 90px; }.hero-button { width: 100%; }
   .catalog-toolbar { padding: 12px; }.catalog-search { min-width: 0; }.catalog-filter-group > span { display: none; }.catalog-filter-group button { min-width: max-content; }
   .catalog-results-head .button { display: none; }.course-catalog-grid { grid-template-columns: 1fr; }
-  .course-detail-hero { padding: 26px 20px; }.course-facts { width: 100%; overflow-x: auto; }.course-facts span { min-width: 90px; }.detail-aside { grid-template-columns: 1fr; }.markdown-body { padding: 22px 18px; overflow: hidden; }.markdown-body table { display: block; overflow-x: auto; }
+  .course-detail-hero { padding: 26px 20px; }.course-facts { width: 100%; overflow-x: auto; }.course-facts span { min-width: 90px; }.detail-aside { grid-template-columns: 1fr; }.markdown-body { padding: 22px 18px; overflow: hidden; }.markdown-body table { display: block; overflow-x: auto; }.markdown-body .article-figure-image { width: 680px; max-width: none; }.markdown-body .article-figure-frame { padding-bottom: 6px; }
   .guide-featured { padding: 25px 20px; }.guide-featured h2 { font-size: 23px; }.guide-card-grid { grid-template-columns: 1fr; }
   .article-title { margin-inline: -18px; padding-inline: 18px; }.article-title h1 { font-size: 30px; }
 }

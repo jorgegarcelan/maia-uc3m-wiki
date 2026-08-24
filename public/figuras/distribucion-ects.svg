@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img" aria-labelledby="t d" width="900" height="380">
+  <title id="t">Distribución de los 60 ECTS del máster MAIA</title>
+  <desc id="d">Optativas 45 ECTS, Prácticas Externas 6 ECTS, Trabajo Fin de Máster 6 ECTS y una asignatura obligatoria de 3 ECTS.</desc>
+  <defs>
+    <linearGradient id="maia" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2477f4"/><stop offset="1" stop-color="#6538f3"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#071f4a" flood-opacity=".07"/>
+    </filter>
+    <style>
+      text{font-family:"Varela Round",system-ui,-apple-system,"Segoe UI",sans-serif}
+      .eyebrow{font-size:11px;font-weight:700;letter-spacing:.11em;fill:#65708a}
+      .label{font-size:14px;font-weight:700;fill:#111d36}
+      .meta{font-size:12px;fill:#65708a}
+      .big{font-size:52px;font-weight:800;fill:#071f4a;letter-spacing:-.03em}
+      .unit{font-size:12px;font-weight:700;letter-spacing:.14em;fill:#65708a}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="378" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+  <text class="eyebrow" x="36" y="42">ESTRUCTURA DE CRÉDITOS · 60 ECTS</text>
+
+  <g filter="url(#soft)" transform="translate(0,26)">
+    <path d="M250,70 A120,120 0 1 1 130,190 L178,190 A72,72 0 1 0 250,118 Z" fill="url(#maia)"/>
+    <path d="M130,190 A120,120 0 0 1 152.92,119.47 L191.75,147.68 A72,72 0 0 0 178,190 Z" fill="#23b7e8"/>
+    <path d="M152.92,119.47 A120,120 0 0 1 212.92,75.87 L227.75,121.52 A72,72 0 0 0 191.75,147.68 Z" fill="#583df4"/>
+    <path d="M212.92,75.87 A120,120 0 0 1 250,70 L250,118 A72,72 0 0 0 227.75,121.52 Z" fill="#071f4a"/>
+  </g>
+  <text class="big" x="250" y="222" text-anchor="middle">60</text>
+  <text class="unit" x="250" y="243" text-anchor="middle">ECTS</text>
+
+  <g transform="translate(452,92)">
+    <g>
+      <rect x="0" y="0" width="14" height="14" rx="4" fill="url(#maia)"/>
+      <text class="label" x="26" y="12">Optativas · 45 ECTS</text>
+      <text class="meta" x="26" y="31">15 asignaturas de 3 ECTS a elegir entre módulos</text>
+    </g>
+    <g transform="translate(0,66)">
+      <rect x="0" y="0" width="14" height="14" rx="4" fill="#23b7e8"/>
+      <text class="label" x="26" y="12">Prácticas externas · 6 ECTS</text>
+      <text class="meta" x="26" y="31">Obligatorias, en S4 (≈150 horas en empresa)</text>
+    </g>
+    <g transform="translate(0,132)">
+      <rect x="0" y="0" width="14" height="14" rx="4" fill="#583df4"/>
+      <text class="label" x="26" y="12">Trabajo Fin de Máster · 6 ECTS</text>
+      <text class="meta" x="26" y="31">Defensa ante tribunal al final del curso</text>
+    </g>
+    <g transform="translate(0,198)">
+      <rect x="0" y="0" width="14" height="14" rx="4" fill="#071f4a"/>
+      <text class="label" x="26" y="12">Obligatoria · 3 ECTS</text>
+      <text class="meta" x="26" y="31">Implicaciones Éticas y Legales de la IA (S1)</text>
+    </g>
+  </g>
+</svg>

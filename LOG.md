@@ -17,6 +17,15 @@ Las entradas se añaden en orden cronológico inverso. Si un dato oficial aún n
 
 ## Historial
 
+### 2026-08-24 — Figuras de la wiki con el sistema MAIA
+
+- **Curso:** General
+- **Ámbito:** documentación visual de la guía y web
+- **Archivos:** `public/figuras/*.svg`, `wiki/plan-de-estudios.md`, `wiki/admision-y-requisitos.md`, `wiki/matricula-y-precios.md`, `wiki/practicas-tfm.md`, `wiki/cursos/2025-2026/semicuatrimestres.md`, `wiki/cursos/2026-2027/semicuatrimestres.md`, `src/content-pages.jsx`, `src/styles.css`, `DESIGN.md`
+- **Cambio:** los diagramas Mermaid, que en la web se veían como bloques de código, se sustituyeron por ocho figuras SVG con la paleta, la tipografía y los radios del sistema MAIA: distribución de los 60 ECTS, mapa de módulos, calendarios de semicuatrimestres 2025/2026 y 2026/2027, proceso de admisión, baremo de 10 puntos, comparativa de precios y línea de tiempo de prácticas y TFM. Se añadió el renderizado de imágenes, los pies de figura y un contenedor responsive desplazable y accesible en pantallas pequeñas.
+- **Fuente:** contenido ya verificado de la wiki y `DESIGN.md`
+- **Estado:** verificado
+
 ### 2026-08-24 — Sistema de diseño de la web
 
 - **Curso:** General

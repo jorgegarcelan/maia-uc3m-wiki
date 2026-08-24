@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 348" role="img" aria-labelledby="t d" width="900" height="348">
+  <title id="t">Calendario de los cuatro semicuatrimestres del curso 2026/2027</title>
+  <desc id="d">S1 7 sep – 23 oct 2026, S2 3 nov – 18 dic 2026, S3 25 ene – 12 mar 2027 y S4 30 mar – 7 may 2027.</desc>
+  <defs>
+    <linearGradient id="maia" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2477f4"/><stop offset="1" stop-color="#6538f3"/>
+    </linearGradient>
+    <style>
+      text{font-family:"Varela Round",system-ui,-apple-system,"Segoe UI",sans-serif}
+      .eyebrow{font-size:11px;font-weight:700;letter-spacing:.11em;fill:#65708a}
+      .month{font-size:11px;font-weight:700;letter-spacing:.06em;fill:#8590a8}
+      .row{font-size:13px;font-weight:800;fill:#111d36}
+      .rowmeta{font-size:10px;fill:#65708a}
+      .inbar{font-size:12px;font-weight:700;fill:#ffffff}
+      .ects{font-size:11px;font-weight:700;fill:#071f4a}
+      .qtr{font-size:10px;font-weight:700;letter-spacing:.1em;fill:#8590a8}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="346" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+  <text class="eyebrow" x="32" y="38">CALENDARIO ACADÉMICO · 2026/2027</text>
+
+  <g class="months">
+    <text class="month" x="170.7" y="70" text-anchor="middle">SEP</text>
+    <text class="month" x="253.4" y="70" text-anchor="middle">OCT</text>
+    <text class="month" x="336.0" y="70" text-anchor="middle">NOV</text>
+    <text class="month" x="418.7" y="70" text-anchor="middle">DIC</text>
+    <text class="month" x="502.7" y="70" text-anchor="middle">ENE</text>
+    <text class="month" x="582.7" y="70" text-anchor="middle">FEB</text>
+    <text class="month" x="662.7" y="70" text-anchor="middle">MAR</text>
+    <text class="month" x="745.4" y="70" text-anchor="middle">ABR</text>
+    <text class="month" x="828.0" y="70" text-anchor="middle">MAY</text>
+  </g>
+  <path d="M130 82 V322 M211.3 82 V322 M295.4 82 V322 M376.7 82 V322 M460.7 82 V322 M544.7 82 V322 M620.6 82 V322 M704.7 82 V322 M786 82 V322 M870 82 V322" stroke="#eef2fa" stroke-width="1"/>
+
+  <text class="qtr" x="32" y="98">1er CUATRIMESTRE</text>
+  <g>
+    <text class="row" x="32" y="126">S1 · Fundamentos</text>
+    <text class="rowmeta" x="32" y="142">7 sep – 23 oct 2026</text>
+    <rect x="146.3" y="110" width="124.7" height="32" rx="10" fill="#3475f6"/>
+    <text class="inbar" x="158.3" y="130">15 ECTS</text>
+  </g>
+  <g>
+    <text class="row" x="32" y="178">S2 · Técnicas</text>
+    <text class="rowmeta" x="32" y="194">3 nov – 18 dic 2026</text>
+    <rect x="300.8" y="162" width="121.9" height="32" rx="10" fill="#583df4"/>
+    <text class="inbar" x="312.8" y="182">15 ECTS</text>
+  </g>
+
+  <text class="qtr" x="32" y="222">2º CUATRIMESTRE</text>
+  <g>
+    <text class="row" x="32" y="250">S3 · Aplicaciones</text>
+    <text class="rowmeta" x="32" y="266">25 ene – 12 mar 2027</text>
+    <rect x="525.8" y="234" width="124.6" height="32" rx="10" fill="#168bd8"/>
+    <text class="inbar" x="537.8" y="254">9–15 ECTS</text>
+  </g>
+  <g>
+    <text class="row" x="32" y="302">S4 · TFM y prácticas</text>
+    <text class="rowmeta" x="32" y="318">30 mar – 7 may 2027</text>
+    <rect x="699.2" y="286" width="103.0" height="32" rx="10" fill="url(#maia)"/>
+    <text class="inbar" x="711.2" y="306">15–21 ECTS</text>
+  </g>
+</svg>

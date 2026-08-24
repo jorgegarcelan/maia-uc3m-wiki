@@ -25,6 +25,10 @@ El alumno debe tener una buena base de conocimientos en áreas **STEM** (Ciencia
 | Motivación, interés, cartas de recomendación | 1 punto |
 | Otros | 1 punto |
 
+![Barra del baremo de admisión: 7 puntos de expediente y 1 punto para idiomas, motivación y otros méritos](../public/figuras/criterios-admision.svg)
+
+*El expediente académico pesa el 70 % de la valoración; el resto se reparte a partes iguales.*
+
 > **Cartas de recomendación:** se reciben de forma confidencial a través de la aplicación de admisiones. Solo pueden ser enviadas por el recomendante tras solicitud del candidato. Deben recibirse hasta 3 días después del envío de la solicitud.
 
 ---
@@ -53,19 +57,9 @@ Consulta los [requisitos de idiomas](https://www.uc3m.es/ss/Satellite/Postgrado/
 
 ## Proceso de Solicitud
 
-```mermaid
-flowchart TD
-    A["📝 Solicitud online\naplicaciones.uc3m.es"] --> B["📄 Subir documentación\nTítulo, expediente, motivación..."]
-    B --> C{"¿Perfil STEM\ncon base suficiente?"}
-    C -->|Sí| D["✅ Evaluación comisión\n10 puntos"]
-    C -->|No| E["📖 Complementos Formativos\nhasta 6 ECTS adicionales"]
-    E --> D
-    D --> F{"Resolución\nde admisión"}
-    F -->|Admitido| G["💳 Reserva de plaza\n800 €"]
-    F -->|No admitido| H["❌ Fin del proceso"]
-    G --> I["📋 Matrícula oficial"]
-    I --> J["🎓 Inicio del Máster\n7 de septiembre de 2026"]
-```
+![Diagrama del proceso de admisión, desde la solicitud online hasta el inicio del máster](../public/figuras/proceso-admision.svg)
+
+*El proceso completo, desde la solicitud hasta el primer día de clase.*
 
 1. Accede a la [aplicación de admisiones](https://aplicaciones.uc3m.es/paa/login)
 2. Sube la documentación requerida

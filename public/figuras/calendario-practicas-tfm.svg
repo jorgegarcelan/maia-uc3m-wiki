@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img" aria-labelledby="t d" width="900" height="260">
+  <title id="t">Calendario orientativo de prácticas en empresa y TFM</title>
+  <desc id="d">Entre diciembre y enero se busca empresa, en febrero conviene tenerla confirmada, en marzo se formaliza el convenio y empiezan las prácticas, y en mayo se entrega la memoria y se defiende el Trabajo Fin de Máster.</desc>
+  <defs>
+    <linearGradient id="maia" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2477f4"/><stop offset="1" stop-color="#6538f3"/>
+    </linearGradient>
+    <style>
+      text{font-family:"Varela Round",system-ui,-apple-system,"Segoe UI",sans-serif}
+      .eyebrow{font-size:11px;font-weight:700;letter-spacing:.11em;fill:#65708a}
+      .when{font-size:10px;font-weight:700;letter-spacing:.1em;fill:#8590a8}
+      .what{font-size:13px;font-weight:800;fill:#111d36;letter-spacing:-.01em}
+      .meta{font-size:11px;fill:#65708a}
+      .foot{font-size:11px;fill:#8590a8}
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="258" rx="18" fill="#ffffff" stroke="#dce3f1"/>
+  <text class="eyebrow" x="32" y="38">PRÁCTICAS EN EMPRESA Y TFM · PLAZOS ORIENTATIVOS</text>
+
+  <path d="M110 150 H790" stroke="#e6ecf8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M110 150 H790" stroke="url(#maia)" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+
+  <g>
+    <circle cx="110" cy="150" r="12" fill="#3475f6" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="337" cy="150" r="12" fill="#583df4" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="563" cy="150" r="12" fill="#168bd8" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="790" cy="150" r="12" fill="#6538f3" stroke="#ffffff" stroke-width="4"/>
+  </g>
+
+  <g text-anchor="middle">
+    <text class="when" x="110" y="88">DICIEMBRE – ENERO</text>
+    <text class="what" x="110" y="110">Buscar empresa</text>
+    <text class="meta" x="110" y="192">Ofertas UC3M, Aula Global,</text>
+    <text class="meta" x="110" y="208">tu propia empresa o un grupo</text>
+    <text class="meta" x="110" y="224">de investigación</text>
+
+    <text class="when" x="337" y="88">FEBRERO</text>
+    <text class="what" x="337" y="110">Empresa confirmada</text>
+    <text class="meta" x="337" y="192">Tutor académico asignado</text>
+    <text class="meta" x="337" y="208">y tema alineado con el TFM</text>
+
+    <text class="when" x="563" y="88">MARZO · S4</text>
+    <text class="what" x="563" y="110">Convenio e inicio</text>
+    <text class="meta" x="563" y="192">Comienzan las ≈150 horas</text>
+    <text class="meta" x="563" y="208">de prácticas (6 ECTS)</text>
+
+    <text class="when" x="790" y="88">MAYO</text>
+    <text class="what" x="790" y="110">Memoria y defensa</text>
+    <text class="meta" x="790" y="192">Memoria de prácticas y</text>
+    <text class="meta" x="790" y="208">defensa del TFM (6 ECTS)</text>
+  </g>
+
+  <text class="foot" x="32" y="248">Empezar en diciembre da margen: el convenio tarda en tramitarse y las prácticas se concentran en el S4.</text>
+</svg>

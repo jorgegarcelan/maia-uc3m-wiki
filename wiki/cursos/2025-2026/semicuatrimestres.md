@@ -15,20 +15,9 @@ El máster se organiza en **4 semicuatrimestres** a lo largo de un curso académ
 | S3 | 2o Cuatrimestre | Ene – Mar 2026 | **Entre 9 y 15 ECTS** |
 | S4 | 2o Cuatrimestre | Mar – May 2026 | **Entre 15 y 21 ECTS** |
 
-```mermaid
-gantt
-    title Calendario Académico MAIA 2025/2026
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b %Y
+![Calendario de los cuatro semicuatrimestres del curso 2025/2026](../../../public/figuras/calendario-2025-2026.svg)
 
-    section Cuatrimestre 1
-    S1 — Fundamentos (15 ECTS)         :s1, 2025-09-08, 2025-10-24
-    S2 — Técnicas + Aplicaciones (15 ECTS) :s2, 2025-11-03, 2026-01-19
-
-    section Cuatrimestre 2
-    S3 — Aplicaciones (9–15 ECTS)      :s3, 2026-01-26, 2026-03-13
-    S4 — TFM + Prácticas (15–21 ECTS)  :crit, s4, 2026-03-23, 2026-05-13
-```
+*Cada semicuatrimestre dura entre 7 y 8 semanas; el S4 concentra prácticas y TFM.*
 
 ---
 

@@ -211,7 +211,17 @@ function MarkdownContent({ content }) {
     const external = href.startsWith("http");
     return <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} {...props}>{children}{external && <ExternalLink size={12} />}</a>;
   };
-  return <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ a: link }}>{content}</ReactMarkdown>;
+  const image = ({ src = "", alt = "", className = "", ...props }) => {
+    const figure = src.match(/figuras\/[^/]+$/);
+    const classes = [className, figure ? "article-figure-image" : ""].filter(Boolean).join(" ");
+    return <img className={classes || undefined} src={figure ? `/${figure[0]}` : src} alt={alt} loading="lazy" {...props} />;
+  };
+  const paragraph = ({ children, className = "", ...props }) => {
+    const containsFigure = React.Children.toArray(children).some((child) => React.isValidElement(child) && /figuras\/[^/]+$/.test(child.props?.src ?? ""));
+    const classes = [className, containsFigure ? "article-figure-frame" : ""].filter(Boolean).join(" ");
+    return <p className={classes || undefined} tabIndex={containsFigure ? 0 : undefined} aria-label={containsFigure ? "Figura desplazable horizontalmente" : undefined} {...props}>{children}</p>;
+  };
+  return <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ a: link, img: image, p: paragraph }}>{content}</ReactMarkdown>;
 }
 
 export function CourseDetail({ slug }) {

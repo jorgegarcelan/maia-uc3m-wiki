@@ -17,6 +17,15 @@ Las entradas se añaden en orden cronológico inverso. Si un dato oficial aún n
 
 ## Historial
 
+### 2026-08-24 — Imagen para previews sociales
+
+- **Curso:** General
+- **Ámbito:** metadatos y difusión
+- **Archivos:** `index.html` y `public/og.png`
+- **Cambio:** se conectó la tarjeta social del Planificador MAIA mediante URLs absolutas y metadatos completos de Open Graph y X/Twitter.
+- **Fuente:** identidad visual MAIA y URL de producción en Vercel
+- **Estado:** verificado
+
 ### 2026-08-24 — Simplificación del README
 
 - **Curso:** General

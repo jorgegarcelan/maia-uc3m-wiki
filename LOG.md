@@ -17,6 +17,15 @@ Las entradas se añaden en orden cronológico inverso. Si un dato oficial aún n
 
 ## Historial
 
+### 2026-08-24 — Vercel Web Analytics
+
+- **Curso:** General
+- **Ámbito:** analítica web y operación
+- **Archivos:** `package.json`, `package-lock.json`, `src/main.jsx`
+- **Cambio:** se instaló el paquete oficial `@vercel/analytics` y se añadió el componente global de React para medir visitas y páginas vistas en todas las rutas de la web.
+- **Fuente:** documentación oficial de Vercel Web Analytics
+- **Estado:** verificado
+
 ### 2026-08-24 — Figuras de la wiki con el sistema MAIA
 
 - **Curso:** General

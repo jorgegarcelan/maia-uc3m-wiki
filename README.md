@@ -168,16 +168,3 @@ El contenido del repositorio se publica bajo **CC BY-SA 4.0** ([`LICENSE`](LICEN
 ---
 
 *Curso de referencia: **2026/2027**.*
-
----
-
-## Planificador web
-
-El repositorio incluye una aplicación web para construir el horario del MAIA, comprobar los requisitos de créditos, detectar solapamientos y exportar el resultado a calendario.
-
-```bash
-npm install
-npm run dev
-```
-
-La aplicación está preparada para desplegarse en Vercel importando este repositorio. Vercel detectará Vite y ejecutará automáticamente `npm run build`.

@@ -17,6 +17,15 @@ Las entradas se añaden en orden cronológico inverso. Si un dato oficial aún n
 
 ## Historial
 
+### 2026-08-24 — Simplificación del README
+
+- **Curso:** General
+- **Ámbito:** documentación pública
+- **Archivos:** `README.md`
+- **Cambio:** se eliminó el bloque local de instalación y despliegue en Vercel; el README mantiene únicamente el acceso destacado a la web ya publicada.
+- **Fuente:** decisión editorial del mantenedor
+- **Estado:** verificado
+
 ### 2026-08-24 — Enlace público desde GitHub
 
 - **Curso:** General
